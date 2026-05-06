@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 40" width="800" height="40" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="footGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3D1F0D" stop-opacity="0"/>
+      <stop offset="8%" stop-color="#3D1F0D" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#3D1F0D" stop-opacity="1"/>
+      <stop offset="92%" stop-color="#3D1F0D" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#3D1F0D" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Top and bottom border lines -->
+  <line x1="0" y1="4" x2="800" y2="4" stroke="url(#footGold)" stroke-width="1.2"/>
+  <line x1="0" y1="36" x2="800" y2="36" stroke="url(#footGold)" stroke-width="1.2"/>
+
+  <!-- Main vine scroll - upper wave -->
+  <path fill="none" stroke="#3D1F0D" stroke-width="1.5" stroke-linecap="round"
+    d="M0,20 C20,20 25,12 40,14 C55,16 58,8 72,10 C86,12 88,6 102,8 C116,10 118,4 132,7 C146,10 148,5 162,8 C176,11 178,6 192,9 C206,12 208,7 222,10 C236,13 238,8 252,11 C266,14 268,10 282,12 C296,14 298,12 310,14 C322,16 324,14 336,15 C348,16 350,15 360,15 C360,15 370,15 382,15 C394,15 396,16 408,14 C420,12 422,14 434,12 C446,10 448,12 462,10 C476,8 478,13 492,11 C506,9 508,14 522,12 C536,10 538,15 552,13 C566,11 568,16 582,14 C596,12 598,17 612,15 C626,13 628,18 642,16 C656,14 658,19 672,17 C686,15 688,20 700,18 C712,16 714,21 728,18 C742,15 745,20 760,18 C774,16 778,20 800,20"/>
+
+  <!-- Main vine scroll - lower wave -->
+  <path fill="none" stroke="#3D1F0D" stroke-width="1.5" stroke-linecap="round"
+    d="M0,20 C20,20 25,28 40,26 C55,24 58,32 72,30 C86,28 88,34 102,32 C116,30 118,36 132,33 C146,30 148,35 162,32 C176,29 178,34 192,31 C206,28 208,33 222,30 C236,27 238,32 252,29 C266,26 268,30 282,28 C296,26 298,28 310,26 C322,24 324,26 336,25 C348,24 350,25 360,25 C360,25 370,25 382,25 C394,25 396,24 408,26 C420,28 422,26 434,28 C446,30 448,28 462,30 C476,32 478,27 492,29 C506,31 508,26 522,28 C536,30 538,25 552,27 C566,29 568,24 582,26 C596,28 598,23 612,25 C626,27 628,22 642,24 C656,26 658,21 672,23 C686,25 688,20 700,22 C712,24 714,19 728,22 C742,25 745,20 760,22 C774,24 778,20 800,20"/>
+
+  <!-- Leaf accents along upper vine -->
+  <ellipse fill="#3D1F0D" cx="72" cy="8" rx="5" ry="2.5" transform="rotate(-25,72,8)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="132" cy="5" rx="5" ry="2.5" transform="rotate(20,132,5)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="192" cy="7" rx="5" ry="2.5" transform="rotate(-15,192,7)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="252" cy="9" rx="5" ry="2.5" transform="rotate(25,252,9)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="462" cy="9" rx="5" ry="2.5" transform="rotate(-25,462,9)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="522" cy="11" rx="5" ry="2.5" transform="rotate(20,522,11)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="582" cy="13" rx="5" ry="2.5" transform="rotate(-15,582,13)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="642" cy="15" rx="5" ry="2.5" transform="rotate(25,642,15)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="728" cy="17" rx="5" ry="2.5" transform="rotate(-20,728,17)" opacity="0.8"/>
+
+  <!-- Leaf accents along lower vine -->
+  <ellipse fill="#3D1F0D" cx="72" cy="31" rx="5" ry="2.5" transform="rotate(25,72,31)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="132" cy="33" rx="5" ry="2.5" transform="rotate(-20,132,33)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="192" cy="31" rx="5" ry="2.5" transform="rotate(15,192,31)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="252" cy="29" rx="5" ry="2.5" transform="rotate(-25,252,29)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="462" cy="31" rx="5" ry="2.5" transform="rotate(25,462,31)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="522" cy="29" rx="5" ry="2.5" transform="rotate(-20,522,29)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="582" cy="27" rx="5" ry="2.5" transform="rotate(15,582,27)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="642" cy="25" rx="5" ry="2.5" transform="rotate(-25,642,25)" opacity="0.8"/>
+  <ellipse fill="#3D1F0D" cx="728" cy="23" rx="5" ry="2.5" transform="rotate(20,728,23)" opacity="0.8"/>
+
+  <!-- Center lotus ornament -->
+  <g transform="translate(400,20)">
+    <path fill="#3D1F0D" d="M0,-14 C5,-10 5,-5 0,0 C-5,-5 -5,-10 0,-14Z"/>
+    <path fill="#3D1F0D" d="M0,14 C5,10 5,5 0,0 C-5,5 -5,10 0,14Z"/>
+    <path fill="#3D1F0D" d="M-14,0 C-10,-5 -5,-5 0,0 C-5,5 -10,5 -14,0Z"/>
+    <path fill="#3D1F0D" d="M14,0 C10,-5 5,-5 0,0 C5,5 10,5 14,0Z"/>
+    <path fill="#C9960C" d="M0,-10 C3,-7 3,-4 0,-1 C-3,-4 -3,-7 0,-10Z" opacity="0.8"/>
+    <path fill="#C9960C" d="M0,10 C3,7 3,4 0,1 C-3,4 -3,7 0,10Z" opacity="0.8"/>
+    <path fill="#C9960C" d="M-10,0 C-7,-3 -4,-3 -1,0 C-4,3 -7,3 -10,0Z" opacity="0.8"/>
+    <path fill="#C9960C" d="M10,0 C7,-3 4,-3 1,0 C4,3 7,3 10,0Z" opacity="0.8"/>
+    <circle fill="#3D1F0D" cx="0" cy="0" r="4"/>
+    <circle fill="#C9960C" cx="0" cy="0" r="2.5"/>
+    <circle fill="#D4AF37" cx="0" cy="0" r="1.2"/>
+    <!-- Flanking diamonds -->
+    <polygon fill="#3D1F0D" points="-24,0 -28,-4 -32,0 -28,4"/>
+    <polygon fill="#3D1F0D" points="24,0 28,-4 32,0 28,4"/>
+    <polygon fill="#C9960C" points="-25,0 -28,-3 -31,0 -28,3" opacity="0.6"/>
+    <polygon fill="#C9960C" points="25,0 28,-3 31,0 28,3" opacity="0.6"/>
+  </g>
+
+  <!-- Small dot accents at regular intervals -->
+  <circle fill="#3D1F0D" cx="160" cy="20" r="2" opacity="0.7"/>
+  <circle fill="#3D1F0D" cx="320" cy="20" r="2" opacity="0.7"/>
+  <circle fill="#3D1F0D" cx="480" cy="20" r="2" opacity="0.7"/>
+  <circle fill="#3D1F0D" cx="640" cy="20" r="2" opacity="0.7"/>
+</svg>

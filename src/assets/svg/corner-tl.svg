@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <style>.ornament { fill: none; stroke: #3D1F0D; stroke-linecap: round; stroke-linejoin: round; }</style>
+  </defs>
+  <!-- Main corner L-frame -->
+  <path class="ornament" stroke-width="2.5" d="M8,8 L8,112 M8,8 L112,8"/>
+  <!-- Outer decorative border lines -->
+  <path class="ornament" stroke-width="1" d="M12,12 L12,108 M12,12 L108,12"/>
+  <!-- Top-left lotus bloom -->
+  <g transform="translate(8,8)">
+    <path fill="#3D1F0D" d="M0,0 C8,0 14,6 14,14 C14,6 20,0 28,0 C20,0 14,-6 14,-6 C14,-6 8,0 0,0Z" opacity="0.9"/>
+    <path fill="#3D1F0D" d="M0,0 C0,8 6,14 14,14 C6,14 0,20 0,28 C0,20 -6,14 -6,14 C-6,14 0,8 0,0Z" opacity="0.9"/>
+    <circle fill="#3D1F0D" cx="14" cy="14" r="4"/>
+    <circle fill="#C9960C" cx="14" cy="14" r="2.5"/>
+    <!-- Petal details -->
+    <path fill="#3D1F0D" d="M14,10 C16,11 17,13 16,15 C17,13 19,12 21,14 C19,12 19,9 17,8 C16,7 14,7 14,10Z" opacity="0.8"/>
+    <path fill="#3D1F0D" d="M10,14 C11,16 13,17 15,16 C13,17 12,19 14,21 C12,19 9,19 8,17 C7,16 7,14 10,14Z" opacity="0.8"/>
+  </g>
+  <!-- Scroll vine going right along top -->
+  <path class="ornament" stroke-width="1.8" d="M22,8 C30,8 36,4 42,8 C48,12 52,6 58,8 C64,10 68,5 74,8 C80,11 84,6 90,8 C96,10 100,7 106,8"/>
+  <!-- Leaf clusters on top vine -->
+  <ellipse fill="#3D1F0D" cx="35" cy="6" rx="5" ry="3" transform="rotate(-20,35,6)"/>
+  <ellipse fill="#3D1F0D" cx="57" cy="6" rx="5" ry="3" transform="rotate(15,57,6)"/>
+  <ellipse fill="#3D1F0D" cx="79" cy="6" rx="5" ry="3" transform="rotate(-10,79,6)"/>
+  <ellipse fill="#3D1F0D" cx="100" cy="7" rx="4" ry="2.5" transform="rotate(20,100,7)"/>
+  <!-- Scroll vine going down along left -->
+  <path class="ornament" stroke-width="1.8" d="M8,22 C8,30 4,36 8,42 C12,48 6,52 8,58 C10,64 5,68 8,74 C11,80 6,84 8,90 C10,96 7,100 8,106"/>
+  <!-- Leaf clusters on left vine -->
+  <ellipse fill="#3D1F0D" cx="6" cy="35" rx="3" ry="5" transform="rotate(20,6,35)"/>
+  <ellipse fill="#3D1F0D" cx="6" cy="57" rx="3" ry="5" transform="rotate(-15,6,57)"/>
+  <ellipse fill="#3D1F0D" cx="6" cy="79" rx="3" ry="5" transform="rotate(10,6,79)"/>
+  <ellipse fill="#3D1F0D" cx="7" cy="100" rx="2.5" ry="4" transform="rotate(-20,7,100)"/>
+  <!-- Small decorative curls -->
+  <path class="ornament" stroke-width="1.2" d="M20,18 C24,14 30,16 28,22"/>
+  <path class="ornament" stroke-width="1.2" d="M18,20 C14,24 16,30 22,28"/>
+  <!-- Inner corner accent -->
+  <path fill="none" stroke="#C9960C" stroke-width="1" d="M18,18 L18,40 M18,18 L40,18"/>
+  <!-- Diamond accents -->
+  <polygon fill="#C9960C" points="42,18 46,14 50,18 46,22" transform="scale(0.5) translate(50,20)"/>
+  <polygon fill="#C9960C" points="18,42 14,46 18,50 22,46" transform="scale(0.5) translate(10,60)"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <style>.ornament { fill: none; stroke: #3D1F0D; stroke-linecap: round; stroke-linejoin: round; }</style>
+  </defs>
+  <!-- Main corner L-frame (bottom-left) -->
+  <path class="ornament" stroke-width="2.5" d="M8,8 L8,112 M8,112 L112,112"/>
+  <path class="ornament" stroke-width="1" d="M12,12 L12,108 M12,108 L108,108"/>
+  <!-- Bottom-left lotus bloom -->
+  <g transform="translate(8,112)">
+    <path fill="#3D1F0D" d="M0,0 C8,0 14,-6 14,-14 C14,-6 20,0 28,0 C20,0 14,6 14,6 C14,6 8,0 0,0Z" opacity="0.9"/>
+    <path fill="#3D1F0D" d="M0,0 C0,-8 6,-14 14,-14 C6,-14 0,-20 0,-28 C0,-20 -6,-14 -6,-14 C-6,-14 0,-8 0,0Z" opacity="0.9"/>
+    <circle fill="#3D1F0D" cx="14" cy="-14" r="4"/>
+    <circle fill="#C9960C" cx="14" cy="-14" r="2.5"/>
+    <path fill="#3D1F0D" d="M14,-10 C16,-11 17,-13 16,-15 C17,-13 19,-12 21,-14 C19,-12 19,-9 17,-8 C16,-7 14,-7 14,-10Z" opacity="0.8" transform="scale(1,-1) translate(0,-20)"/>
+    <path fill="#3D1F0D" d="M10,-14 C11,-16 13,-17 15,-16 C13,-17 12,-19 14,-21 C12,-19 9,-19 8,-17 C7,-16 7,-14 10,-14Z" opacity="0.8" transform="scale(1,-1) translate(0,-28)"/>
+  </g>
+  <!-- Scroll vine going right along bottom -->
+  <path class="ornament" stroke-width="1.8" d="M22,112 C30,112 36,116 42,112 C48,108 52,114 58,112 C64,110 68,115 74,112 C80,109 84,114 90,112 C96,110 100,113 106,112"/>
+  <ellipse fill="#3D1F0D" cx="35" cy="114" rx="5" ry="3" transform="rotate(20,35,114)"/>
+  <ellipse fill="#3D1F0D" cx="57" cy="114" rx="5" ry="3" transform="rotate(-15,57,114)"/>
+  <ellipse fill="#3D1F0D" cx="79" cy="114" rx="5" ry="3" transform="rotate(10,79,114)"/>
+  <ellipse fill="#3D1F0D" cx="100" cy="113" rx="4" ry="2.5" transform="rotate(-20,100,113)"/>
+  <!-- Scroll vine going up along left -->
+  <path class="ornament" stroke-width="1.8" d="M8,98 C8,90 4,84 8,78 C12,72 6,68 8,62 C10,56 5,52 8,46 C11,40 6,36 8,30 C10,24 7,20 8,14"/>
+  <ellipse fill="#3D1F0D" cx="6" cy="85" rx="3" ry="5" transform="rotate(20,6,85)"/>
+  <ellipse fill="#3D1F0D" cx="6" cy="63" rx="3" ry="5" transform="rotate(-15,6,63)"/>
+  <ellipse fill="#3D1F0D" cx="6" cy="41" rx="3" ry="5" transform="rotate(10,6,41)"/>
+  <ellipse fill="#3D1F0D" cx="7" cy="20" rx="2.5" ry="4" transform="rotate(-20,7,20)"/>
+  <path class="ornament" stroke-width="1.2" d="M20,102 C24,106 30,104 28,98"/>
+  <path class="ornament" stroke-width="1.2" d="M18,100 C14,96 16,90 22,92"/>
+  <path fill="none" stroke="#C9960C" stroke-width="1" d="M18,102 L18,80 M18,102 L40,102"/>
+</svg>

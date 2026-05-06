@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <style>.ornament { fill: none; stroke: #3D1F0D; stroke-linecap: round; stroke-linejoin: round; }</style>
+  </defs>
+  <!-- Main corner L-frame (bottom-right) -->
+  <path class="ornament" stroke-width="2.5" d="M112,8 L112,112 M112,112 L8,112"/>
+  <path class="ornament" stroke-width="1" d="M108,12 L108,108 M108,108 L12,108"/>
+  <!-- Bottom-right lotus bloom -->
+  <g transform="translate(112,112)">
+    <path fill="#3D1F0D" d="M0,0 C-8,0 -14,-6 -14,-14 C-14,-6 -20,0 -28,0 C-20,0 -14,6 -14,6 C-14,6 -8,0 0,0Z" opacity="0.9"/>
+    <path fill="#3D1F0D" d="M0,0 C0,-8 -6,-14 -14,-14 C-6,-14 0,-20 0,-28 C0,-20 6,-14 6,-14 C6,-14 0,-8 0,0Z" opacity="0.9"/>
+    <circle fill="#3D1F0D" cx="-14" cy="-14" r="4"/>
+    <circle fill="#C9960C" cx="-14" cy="-14" r="2.5"/>
+  </g>
+  <!-- Scroll vine going left along bottom -->
+  <path class="ornament" stroke-width="1.8" d="M98,112 C90,112 84,116 78,112 C72,108 68,114 62,112 C56,110 52,115 46,112 C40,109 36,114 30,112 C24,110 20,113 14,112"/>
+  <ellipse fill="#3D1F0D" cx="85" cy="114" rx="5" ry="3" transform="rotate(-20,85,114)"/>
+  <ellipse fill="#3D1F0D" cx="63" cy="114" rx="5" ry="3" transform="rotate(15,63,114)"/>
+  <ellipse fill="#3D1F0D" cx="41" cy="114" rx="5" ry="3" transform="rotate(-10,41,114)"/>
+  <ellipse fill="#3D1F0D" cx="20" cy="113" rx="4" ry="2.5" transform="rotate(20,20,113)"/>
+  <!-- Scroll vine going up along right -->
+  <path class="ornament" stroke-width="1.8" d="M112,98 C112,90 116,84 112,78 C108,72 114,68 112,62 C110,56 115,52 112,46 C109,40 114,36 112,30 C110,24 113,20 112,14"/>
+  <ellipse fill="#3D1F0D" cx="114" cy="85" rx="3" ry="5" transform="rotate(-20,114,85)"/>
+  <ellipse fill="#3D1F0D" cx="114" cy="63" rx="3" ry="5" transform="rotate(15,114,63)"/>
+  <ellipse fill="#3D1F0D" cx="114" cy="41" rx="3" ry="5" transform="rotate(-10,114,41)"/>
+  <ellipse fill="#3D1F0D" cx="113" cy="20" rx="2.5" ry="4" transform="rotate(20,113,20)"/>
+  <path class="ornament" stroke-width="1.2" d="M100,102 C96,106 90,104 92,98"/>
+  <path class="ornament" stroke-width="1.2" d="M102,100 C106,96 104,90 98,92"/>
+  <path fill="none" stroke="#C9960C" stroke-width="1" d="M102,102 L102,80 M102,102 L80,102"/>
+</svg>

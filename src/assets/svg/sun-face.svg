@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <radialGradient id="sunGrad" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#FFE566"/>
+      <stop offset="60%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#C9960C"/>
+    </radialGradient>
+    <radialGradient id="faceGrad" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FFF0A0"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </radialGradient>
+  </defs>
+  <!-- Outer rays - triangular flame rays -->
+  <g transform="translate(40,40)">
+    <!-- 16 rays -->
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(22.5)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(45)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(67.5)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(90)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(112.5)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(135)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(157.5)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(180)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(202.5)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(225)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(247.5)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(270)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(292.5)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(315)"/>
+    <path fill="#C9960C" d="M0,-38 L-4,-28 L4,-28Z" transform="rotate(337.5)"/>
+    <!-- Wavy rays between triangles -->
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(11.25)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(33.75)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(56.25)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(78.75)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(101.25)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(123.75)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(146.25)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(168.75)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(191.25)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(213.75)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(236.25)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(258.75)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(281.25)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(303.75)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(326.25)"/>
+    <path fill="#D4AF37" opacity="0.6" d="M0,-34 C1,-31 0,-29 0,-27 C0,-29 -1,-31 0,-34Z" transform="rotate(348.75)"/>
+  </g>
+  <!-- Outer ring -->
+  <circle cx="40" cy="40" r="26" fill="url(#sunGrad)" stroke="#C9960C" stroke-width="1.5"/>
+  <!-- Face base -->
+  <circle cx="40" cy="40" r="22" fill="url(#faceGrad)"/>
+  <!-- Face border -->
+  <circle cx="40" cy="40" r="22" fill="none" stroke="#3D1F0D" stroke-width="1.2"/>
+  <!-- Decorative inner ring -->
+  <circle cx="40" cy="40" r="19" fill="none" stroke="#C9960C" stroke-width="0.8" stroke-dasharray="2,2"/>
+  <!-- Eyes - almond shaped traditional style -->
+  <path fill="#3D1F0D" d="M31,37 C33,34.5 37,34.5 39,37 C37,36 33,36 31,37Z"/>
+  <ellipse fill="#3D1F0D" cx="35" cy="37.5" rx="2.5" ry="2"/>
+  <circle fill="#FFE566" cx="34.2" cy="37" r="0.7"/>
+  <path fill="#3D1F0D" d="M41,37 C43,34.5 47,34.5 49,37 C47,36 43,36 41,37Z"/>
+  <ellipse fill="#3D1F0D" cx="45" cy="37.5" rx="2.5" ry="2"/>
+  <circle fill="#FFE566" cx="44.2" cy="37" r="0.7"/>
+  <!-- Eyebrows -->
+  <path fill="none" stroke="#3D1F0D" stroke-width="1.3" stroke-linecap="round" d="M31,34.5 C33,33 36,33 38.5,34"/>
+  <path fill="none" stroke="#3D1F0D" stroke-width="1.3" stroke-linecap="round" d="M41.5,34 C44,33 47,33 49,34.5"/>
+  <!-- Nose - traditional stylized -->
+  <path fill="#3D1F0D" d="M38.5,40 C39,41.5 41,41.5 41.5,40 C41,42 40,43 40,43 C40,43 39,42 38.5,40Z" opacity="0.7"/>
+  <!-- Mouth - serene smile -->
+  <path fill="none" stroke="#3D1F0D" stroke-width="1.2" stroke-linecap="round" d="M35.5,46 C37.5,48.5 42.5,48.5 44.5,46"/>
+  <!-- Cheek dots -->
+  <circle fill="#C9960C" cx="31.5" cy="44" r="1.8" opacity="0.5"/>
+  <circle fill="#C9960C" cx="48.5" cy="44" r="1.8" opacity="0.5"/>
+  <!-- Forehead bindi -->
+  <circle fill="#8B1A1A" cx="40" cy="32" r="2"/>
+  <circle fill="#FFE566" cx="40" cy="32" r="0.8"/>
+  <!-- Decorative marks on forehead -->
+  <path fill="#C9960C" d="M37,30.5 L38.5,28.5 L40,30 L41.5,28.5 L43,30.5" opacity="0.7" stroke="#C9960C" stroke-width="0.5" fill="none"/>
+</svg>

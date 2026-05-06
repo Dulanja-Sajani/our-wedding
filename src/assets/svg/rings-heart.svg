@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="100" height="80">
+  <defs>
+    <linearGradient id="ringGold1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE566"/>
+      <stop offset="40%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#9A7209"/>
+    </linearGradient>
+    <linearGradient id="ringGold2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE566"/>
+      <stop offset="40%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#9A7209"/>
+    </linearGradient>
+    <filter id="softShadow">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#3D1F0D" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Heart outline (subtle background) -->
+  <path fill="none" stroke="#8B1A1A" stroke-width="0.8" stroke-opacity="0.3"
+    d="M50,68 C50,68 18,48 18,32 C18,22 26,15 35,15 C41,15 46,18 50,22 C54,18 59,15 65,15 C74,15 82,22 82,32 C82,48 50,68 50,68Z"/>
+
+  <!-- Left ring (slightly behind) -->
+  <circle cx="38" cy="42" r="18" fill="none" stroke="url(#ringGold1)" stroke-width="7" filter="url(#softShadow)"/>
+  <!-- Left ring shine -->
+  <path fill="none" stroke="rgba(255,255,200,0.6)" stroke-width="2"
+    d="M26,34 C28,28 34,24 40,24"/>
+  <!-- Left ring engraving -->
+  <circle cx="38" cy="42" r="14.5" fill="none" stroke="#C9960C" stroke-width="0.5" stroke-opacity="0.5"/>
+  <circle cx="38" cy="42" r="21.5" fill="none" stroke="#C9960C" stroke-width="0.5" stroke-opacity="0.5"/>
+
+  <!-- Right ring (slightly in front) -->
+  <circle cx="62" cy="42" r="18" fill="none" stroke="url(#ringGold2)" stroke-width="7" filter="url(#softShadow)"/>
+  <!-- Right ring shine -->
+  <path fill="none" stroke="rgba(255,255,200,0.6)" stroke-width="2"
+    d="M50,34 C52,28 58,24 64,24"/>
+  <!-- Right ring engraving -->
+  <circle cx="62" cy="42" r="14.5" fill="none" stroke="#C9960C" stroke-width="0.5" stroke-opacity="0.5"/>
+  <circle cx="62" cy="42" r="21.5" fill="none" stroke="#C9960C" stroke-width="0.5" stroke-opacity="0.5"/>
+
+  <!-- Intersection overlap fix - redraw part of left ring over right ring -->
+  <path fill="none" stroke="url(#ringGold1)" stroke-width="7"
+    d="M50,31 C48,28 44,25 38,24 C32,24 27,28 25,33 C23,38 24,43 27,47"/>
+  <path fill="none" stroke="rgba(255,255,200,0.6)" stroke-width="2"
+    d="M26,34 C28,28 34,24 40,24"/>
+
+  <!-- Small diamond on each ring top -->
+  <polygon fill="#FFE566" points="38,23 40,20 42,23 40,26" opacity="0.9"/>
+  <polygon fill="#FFE566" points="62,23 64,20 66,23 64,26" opacity="0.9"/>
+  <polygon fill="#C9960C" points="38,24 40,21.5 42,24 40,26.5" opacity="0.7"/>
+  <polygon fill="#C9960C" points="62,24 64,21.5 66,24 64,26.5" opacity="0.7"/>
+
+  <!-- Small heart at bottom center intersection -->
+  <path fill="#8B1A1A"
+    d="M50,56 C50,56 44,51 44,47 C44,44 46,42 48,42 C49,42 50,43 50,43 C50,43 51,42 52,42 C54,42 56,44 56,47 C56,51 50,56 50,56Z"
+    opacity="0.7"/>
+
+  <!-- Decorative dots -->
+  <circle fill="#C9960C" cx="20" cy="42" r="1.5" opacity="0.6"/>
+  <circle fill="#C9960C" cx="80" cy="42" r="1.5" opacity="0.6"/>
+  <circle fill="#C9960C" cx="50" cy="20" r="1.5" opacity="0.6"/>
+  <circle fill="#C9960C" cx="50" cy="65" r="1.5" opacity="0.6"/>
+</svg>

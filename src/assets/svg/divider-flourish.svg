@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 30" width="400" height="30">
+  <defs>
+    <linearGradient id="divGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C9960C" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#C9960C" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#D4AF37" stop-opacity="1"/>
+      <stop offset="80%" stop-color="#C9960C" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#C9960C" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main horizontal line -->
+  <line x1="0" y1="15" x2="400" y2="15" stroke="url(#divGold)" stroke-width="1"/>
+
+  <!-- Left scroll work -->
+  <path fill="none" stroke="#C9960C" stroke-width="1.2" stroke-linecap="round"
+    d="M10,15 C20,15 25,10 35,12 C45,14 48,8 55,10 C62,12 64,7 72,9 C80,11 82,6 90,9 C98,12 100,8 108,10 C116,12 118,9 125,11 C132,13 134,10 140,12 C146,14 148,12 152,13 C156,14 158,13 162,14 C166,15 168,15 172,15"/>
+
+  <path fill="none" stroke="#C9960C" stroke-width="1.2" stroke-linecap="round"
+    d="M10,15 C20,15 25,20 35,18 C45,16 48,22 55,20 C62,18 64,23 72,21 C80,19 82,24 90,21 C98,18 100,22 108,20 C116,18 118,21 125,19 C132,17 134,20 140,18 C146,16 148,18 152,17 C156,16 158,17 162,16 C166,15 168,15 172,15"/>
+
+  <!-- Right scroll work (mirror) -->
+  <path fill="none" stroke="#C9960C" stroke-width="1.2" stroke-linecap="round"
+    d="M390,15 C380,15 375,10 365,12 C355,14 352,8 345,10 C338,12 336,7 328,9 C320,11 318,6 310,9 C302,12 300,8 292,10 C284,12 282,9 275,11 C268,13 266,10 260,12 C254,14 252,12 248,13 C244,14 242,13 238,14 C234,15 232,15 228,15"/>
+
+  <path fill="none" stroke="#C9960C" stroke-width="1.2" stroke-linecap="round"
+    d="M390,15 C380,15 375,20 365,18 C355,16 352,22 345,20 C338,18 336,23 328,21 C320,19 318,24 310,21 C302,18 300,22 292,20 C284,18 282,21 275,19 C268,17 266,20 260,18 C254,16 252,18 248,17 C244,16 242,17 238,16 C234,15 232,15 228,15"/>
+
+  <!-- Center lotus diamond -->
+  <g transform="translate(200,15)">
+    <!-- Outer diamond -->
+    <polygon fill="#C9960C" stroke="#D4AF37" stroke-width="0.5" points="0,-12 8,0 0,12 -8,0"/>
+    <!-- Inner diamond -->
+    <polygon fill="#D4AF37" points="0,-7 4.5,0 0,7 -4.5,0"/>
+    <!-- Center dot -->
+    <circle fill="#3D1F0D" cx="0" cy="0" r="2.5"/>
+    <circle fill="#D4AF37" cx="0" cy="0" r="1.2"/>
+    <!-- Petal accents -->
+    <path fill="#3D1F0D" d="M0,-8 C1.5,-6 1.5,-4 0,-3 C-1.5,-4 -1.5,-6 0,-8Z" opacity="0.8"/>
+    <path fill="#3D1F0D" d="M0,8 C1.5,6 1.5,4 0,3 C-1.5,4 -1.5,6 0,8Z" opacity="0.8"/>
+    <path fill="#3D1F0D" d="M-8,0 C-6,-1.5 -4,-1.5 -3,0 C-4,1.5 -6,1.5 -8,0Z" opacity="0.8"/>
+    <path fill="#3D1F0D" d="M8,0 C6,-1.5 4,-1.5 3,0 C4,1.5 6,1.5 8,0Z" opacity="0.8"/>
+    <!-- Small flanking dots -->
+    <circle fill="#C9960C" cx="-18" cy="0" r="2"/>
+    <circle fill="#C9960C" cx="18" cy="0" r="2"/>
+    <circle fill="#C9960C" cx="-26" cy="0" r="1.2"/>
+    <circle fill="#C9960C" cx="26" cy="0" r="1.2"/>
+  </g>
+
+  <!-- Leaf accents along scroll -->
+  <ellipse fill="#C9960C" cx="55" cy="9" rx="4" ry="2" transform="rotate(-20,55,9)" opacity="0.6"/>
+  <ellipse fill="#C9960C" cx="90" cy="8" rx="4" ry="2" transform="rotate(15,90,8)" opacity="0.6"/>
+  <ellipse fill="#C9960C" cx="125" cy="10" rx="3.5" ry="1.8" transform="rotate(-10,125,10)" opacity="0.6"/>
+  <ellipse fill="#C9960C" cx="345" cy="9" rx="4" ry="2" transform="rotate(20,345,9)" opacity="0.6"/>
+  <ellipse fill="#C9960C" cx="310" cy="8" rx="4" ry="2" transform="rotate(-15,310,8)" opacity="0.6"/>
+  <ellipse fill="#C9960C" cx="275" cy="10" rx="3.5" ry="1.8" transform="rotate(10,275,10)" opacity="0.6"/>
+</svg>

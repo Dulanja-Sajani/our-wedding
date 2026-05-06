@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Tharu Digital Nikini';
+  src: url('/TharuDigitalNikini.ttf') format('truetype');
+}
+
+@layer base {
+  :root {
+    /* Ivory & Cream Base */
+    --cream:           #FDF6ED;
+    --ivory:           #FFFDF8;
+    
+    /* Gold Metallic Accents */
+    --gold:            #C9960C;
+    --gold-light:      #D4AF37;
+    --gold-metallic:   #E6C547;
+    
+    /* Champagne & Beige */
+    --champagne:       #F7E7CE;
+    --champagne-light: #FAF0E6;
+    --champagne-dark:  #E6D5B8;
+    --beige:           #D4B896;
+    --beige-light:     #E8D5C4;
+    --beige-dark:      #C4A878;
+    
+    /* Supporting Colors */
+    --brown:           #3D1F0D;
+    --brown-light:     #6B3A1F;
+    --red-accent:      #8B1A1A;
+    --text:            #4A2C0A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: transparent;
+    font-family: 'Noto Serif Sinhala', serif;
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg,
+      rgba(253,246,237,0.52) 0%,
+      rgba(247,231,206,0.44) 50%,
+      rgba(232,213,196,0.38) 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@layer components {
+  /* Marble card backgrounds with champagne/beige gradient */
+  .marble-card {
+    @apply relative overflow-hidden;
+    background: linear-gradient(135deg, rgba(255,253,248,0.7) 0%, rgba(247,231,206,0.5) 50%, rgba(232,213,196,0.4) 100%);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(212,175,150,0.3);
+    box-shadow: 
+      0 4px 30px rgba(61,31,13,0.08),
+      inset 0 1px 0 rgba(255,255,255,0.6);
+  }
+
+  /* Gold accent buttons */
+  .gold-btn {
+    @apply font-semibold transition-all duration-200 cursor-pointer;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--ivory);
+    box-shadow: 0 4px 15px rgba(201,150,12,0.3);
+  }
+
+  .gold-btn:hover {
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-metallic) 100%);
+    box-shadow: 0 6px 25px rgba(201,150,12,0.4);
+    transform: translateY(-2px);
+  }
+
+  .gold-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(201,150,12,0.3);
+  }
+
+  /* Gold styled inputs */
+  .gold-input {
+    @apply bg-ivory/40 border-2 border-gold/30 transition-all duration-200;
+    color: var(--text);
+  }
+
+  .gold-input:focus {
+    @apply border-gold outline-none;
+    background: rgba(255,253,248,0.8);
+    box-shadow: 0 0 0 3px rgba(201,150,12,0.1);
+  }
+
+  .gold-input::placeholder {
+    @apply text-brown/40;
+  }
+
+  /* Section animations */
+  .section-animate {
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .section-animate.visible {
+    opacity: 1;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s cubic-bezier(0.34,1.56,0.64,1);
+  }
+}
+
+@layer utilities {
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.8s ease both; }
+  .delay-1 { animation-delay: 0.15s; }
+  .delay-2 { animation-delay: 0.3s; }
+  .delay-3 { animation-delay: 0.45s; }
+  .delay-4 { animation-delay: 0.6s; }
+  .delay-5 { animation-delay: 0.75s; }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .scale-in { animation: scaleIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both; }
+
+  /* Champagne and beige accent utilities */
+  .text-champagne { color: var(--champagne); }
+  .text-beige { color: var(--beige); }
+  .bg-champagne-gradient { background: linear-gradient(135deg, var(--champagne-light) 0%, var(--beige-light) 100%); }
+  .border-champagne { border-color: var(--champagne); }
+}

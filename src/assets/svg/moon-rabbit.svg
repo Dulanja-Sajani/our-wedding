@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <radialGradient id="moonGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#FFFDF8"/>
+      <stop offset="100%" stop-color="#F0E8D0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Outer circle badge -->
+  <circle cx="40" cy="40" r="38" fill="#FDF6ED" stroke="#3D1F0D" stroke-width="2"/>
+  <circle cx="40" cy="40" r="35" fill="none" stroke="#C9960C" stroke-width="0.8" stroke-dasharray="3,2"/>
+
+  <!-- Crescent moon shape -->
+  <path fill="#D4AF37" d="
+    M40,12
+    C54,12 65,23 65,40
+    C65,57 54,68 40,68
+    C48,60 52,51 52,40
+    C52,29 48,20 40,12Z
+  " opacity="0.9"/>
+
+  <!-- Moon highlight -->
+  <path fill="#FFE566" d="
+    M42,14
+    C50,18 54,28 54,40
+    C54,50 50,58 44,64
+    C50,58 54,50 54,40
+    C54,28 50,18 42,14Z
+  " opacity="0.4"/>
+
+  <!-- Rabbit silhouette on the moon -->
+  <g transform="translate(28, 18)">
+    <!-- Body -->
+    <ellipse cx="14" cy="32" rx="9" ry="12" fill="#3D1F0D"/>
+    <!-- Head -->
+    <circle cx="14" cy="20" r="8" fill="#3D1F0D"/>
+    <!-- Left ear (long) -->
+    <path fill="#3D1F0D" d="M10,14 C8,8 7,2 8,-2 C10,2 11,8 12,14Z"/>
+    <!-- Right ear (long, slightly bent) -->
+    <path fill="#3D1F0D" d="M16,14 C18,8 20,3 21,0 C20,4 18,8 17,14Z"/>
+    <!-- Inner ear detail -->
+    <path fill="#C9960C" d="M8.5,12 C8,7 7.5,3 8.5,-1 C9.5,3 9.5,7 9.5,12Z" opacity="0.6"/>
+    <!-- Eye -->
+    <circle cx="17" cy="19" r="1.8" fill="#FDF6ED"/>
+    <circle cx="17.5" cy="19" r="0.9" fill="#3D1F0D"/>
+    <!-- Tail -->
+    <circle cx="5" cy="38" r="3.5" fill="#3D1F0D"/>
+    <!-- Front legs/paws -->
+    <path fill="#3D1F0D" d="M8,36 C5,38 4,42 6,44 C8,42 8,38 8,36Z"/>
+    <path fill="#3D1F0D" d="M16,38 C18,40 19,44 17,46 C15,44 15,40 16,38Z"/>
+    <!-- Whiskers -->
+    <path fill="none" stroke="#FDF6ED" stroke-width="0.7" d="M20,20 L26,18 M20,21 L26,21 M20,22 L26,24"/>
+    <path fill="none" stroke="#FDF6ED" stroke-width="0.7" d="M14,20 L8,18 M14,21 L8,21 M14,22 L8,24"/>
+    <!-- Nose -->
+    <circle cx="19" cy="21" r="1" fill="#8B1A1A"/>
+  </g>
+
+  <!-- Stars around rabbit -->
+  <path fill="#C9960C" d="M20,30 L21,27 L22,30 L25,31 L22,32 L21,35 L20,32 L17,31Z" opacity="0.6"/>
+  <path fill="#C9960C" d="M58,20 L59,17 L60,20 L63,21 L60,22 L59,25 L58,22 L55,21Z" opacity="0.5"/>
+  <path fill="#D4AF37" d="M62,48 L63,46 L64,48 L66,49 L64,50 L63,52 L62,50 L60,49Z" opacity="0.6"/>
+
+  <!-- Decorative dots on border -->
+  <circle cx="40" cy="3" r="2" fill="#C9960C"/>
+  <circle cx="40" cy="77" r="2" fill="#C9960C"/>
+  <circle cx="3" cy="40" r="2" fill="#C9960C"/>
+  <circle cx="77" cy="40" r="2" fill="#C9960C"/>
+</svg>
