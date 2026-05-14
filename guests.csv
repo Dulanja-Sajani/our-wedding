@@ -1,0 +1,6 @@
+id,name,phone,gender,inviteType,invitationSent,rsvpReceived,rsvpStatus
+1,John Doe,+1234567890,Male,Individual,FALSE,FALSE,
+2,Jane Smith,+1234567891,Female,Couple,FALSE,FALSE,
+3,Bob Johnson,+1234567892,Male,Individual,FALSE,FALSE,
+4,Sarah Williams,+1234567893,Female,Family,FALSE,FALSE,
+5,Michael Brown,+1234567894,Male,Couple,FALSE,FALSE,

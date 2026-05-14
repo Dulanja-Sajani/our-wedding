@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "phone": "+1234567890",
+    "gender": "Male",
+    "inviteType": "Individual",
+    "invitationSent": false,
+    "rsvpReceived": false,
+    "rsvpStatus": ""
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "phone": "+1234567891",
+    "gender": "Female",
+    "inviteType": "Couple",
+    "invitationSent": false,
+    "rsvpReceived": false,
+    "rsvpStatus": ""
+  },
+  {
+    "id": 3,
+    "name": "Bob Johnson",
+    "phone": "+1234567892",
+    "gender": "Male",
+    "inviteType": "Individual",
+    "invitationSent": false,
+    "rsvpReceived": false,
+    "rsvpStatus": ""
+  },
+  {
+    "id": 4,
+    "name": "Sarah Williams",
+    "phone": "+1234567893",
+    "gender": "Female",
+    "inviteType": "Family",
+    "invitationSent": false,
+    "rsvpReceived": false,
+    "rsvpStatus": ""
+  },
+  {
+    "id": 5,
+    "name": "Michael Brown",
+    "phone": "+1234567894",
+    "gender": "Male",
+    "inviteType": "Couple",
+    "invitationSent": false,
+    "rsvpReceived": false,
+    "rsvpStatus": ""
+  }
+]

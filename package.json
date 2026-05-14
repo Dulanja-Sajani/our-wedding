@@ -7,7 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "csv-to-json": "node scripts/csv-to-json.js",
+    "json-to-csv": "node scripts/json-to-csv.js",
+    "send-invitations": "node scripts/send-invitations.js both",
+    "send-email": "node scripts/send-invitations.js email",
+    "send-whatsapp": "node scripts/send-invitations.js whatsapp"
   },
   "dependencies": {
     "react": "^19.2.5",

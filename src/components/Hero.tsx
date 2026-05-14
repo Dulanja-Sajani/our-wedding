@@ -175,7 +175,7 @@ export default function Hero() {
       </div> */}
 
       {/* Divider */}
-      <div className="fade-up delay-4" style={{display:'flex',justifyContent:'center',margin:'16px 0',width:'100%'}}>
+      {/* <div className="fade-up delay-4" style={{display:'flex',justifyContent:'center',margin:'16px 0',width:'100%'}}>
         <svg style={{width:'clamp(200px,70vw,320px)',height:'auto'}} viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="dg" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -198,7 +198,7 @@ export default function Hero() {
           <circle cx="118" cy="15" r="1.5" fill="#C9960C" opacity="0.7"/>
           <circle cx="182" cy="15" r="1.5" fill="#C9960C" opacity="0.7"/>
         </svg>
-      </div>
+      </div> */}
 
     </section>
   );

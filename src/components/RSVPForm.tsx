@@ -10,6 +10,22 @@ interface FormData {
   guestCount: number;
   dietary: string;
   message: string;
+  guestToken?: string; // Personalization token from invitation link
+}
+
+function decodeToken(token: string): { guestId: number; guestEmail: string } | null {
+  try {
+    const padded = token + '='.repeat((4 - (token.length % 4)) % 4);
+    const decoded = Buffer.from(padded, 'base64').toString('utf-8');
+    const [guestIdStr, guestEmail] = decoded.split(':');
+    const guestId = parseInt(guestIdStr, 10);
+    if (!isNaN(guestId)) {
+      return { guestId, guestEmail };
+    }
+  } catch (error) {
+    console.error('Token decode error:', error);
+  }
+  return null;
 }
 
 export default function RSVPForm() {
@@ -21,10 +37,29 @@ export default function RSVPForm() {
     guestCount: 1,
     dietary: '',
     message: '',
+    guestToken: undefined,
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   useEffect(() => {
+    // Extract guest token from URL parameters
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('guest');
+    
+    if (token) {
+      const decoded = decodeToken(token);
+      if (decoded) {
+        // Pre-fill name from email address
+        const nameFromEmail = decoded.guestEmail.split('@')[0].replace(/[._]/g, ' ');
+        setFormData(d => ({
+          ...d,
+          fullName: nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1),
+          guestToken: token,
+        }));
+      }
+    }
+
+    // Intersection observer for animations
     const el = sectionRef.current;
     if (!el) return;
     const observer = new IntersectionObserver(
@@ -52,6 +87,7 @@ export default function RSVPForm() {
           'Guest Count': formData.guestCount,
           'Dietary Requirements': formData.dietary || 'None',
           'Message to Couple': formData.message || 'None',
+          ...(formData.guestToken && { 'Guest Token': formData.guestToken }), // Include token for verification
         }),
       });
       if (response.ok) {
