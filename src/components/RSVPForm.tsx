@@ -16,7 +16,7 @@ interface FormData {
 function decodeToken(token: string): { guestId: number; guestEmail: string } | null {
   try {
     const padded = token + '='.repeat((4 - (token.length % 4)) % 4);
-    const decoded = Buffer.from(padded, 'base64').toString('utf-8');
+    const decoded = atob(padded);
     const [guestIdStr, guestEmail] = decoded.split(':');
     const guestId = parseInt(guestIdStr, 10);
     if (!isNaN(guestId)) {
