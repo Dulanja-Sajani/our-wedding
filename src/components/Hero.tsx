@@ -125,13 +125,13 @@ export default function Hero() {
       <div style={s.symbolsRow} className="fade-up">
 
         {/* Sun */}
-        <img src="/sun.png" alt="Sun" style={{width:'clamp(150px,25vw,200px)',height:'auto'}} />
+        <img src={`${import.meta.env.BASE_URL}sun.png`} alt="Sun" style={{width:'clamp(150px,25vw,200px)',height:'auto'}} />
 
         {/* Kalasha */}
-        <img src="/punkalasa.png" alt="Punkalasa" style={{width:'clamp(150px,25vw,200px)',height:'auto'}} />
+        <img src={`${import.meta.env.BASE_URL}punkalasa.png`} alt="Punkalasa" style={{width:'clamp(150px,25vw,200px)',height:'auto'}} />
 
         {/* Moon Rabbit */}
-        <img src="/moon_no_bg.png" alt="Moon" style={{width:'clamp(150px,25vw,200px)',height:'auto'}} />
+        <img src={`${import.meta.env.BASE_URL}moon_no_bg.png`} alt="Moon" style={{width:'clamp(150px,25vw,200px)',height:'auto'}} />
 
       </div>
 
@@ -154,7 +154,7 @@ export default function Hero() {
 
         {/* Couple photo */}
         <div style={s.coupleArea}>
-          <img src="/Couple_img.png" alt="Couple" style={{width:'100%',height:'100%',objectFit:'cover'}} />
+          <img src={`${import.meta.env.BASE_URL}Couple_img.png`} alt="Couple" style={{width:'100%',height:'100%',objectFit:'cover'}} />
         </div>
 
         {/* Right Parents */}

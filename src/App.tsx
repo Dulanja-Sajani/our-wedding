@@ -56,15 +56,15 @@ export default function App() {
           opacity: 0.15,
         }}
       >
-        <source src="/mandala-bg.mp4" type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}mandala-bg.mp4`} type="video/mp4" />
       </video>
 
       {/* Fixed corner ornaments */}
       <div aria-hidden="true">
-        <img src="/top-left-corner.png" alt="" style={{ ...cornerBase, top: 0, left: 0 }} />
-        <img src="/top-right-corner.png" alt="" style={{ ...cornerBase, top: 0, right: 0 }} />
-        <img src="/bottom-left-corner.png" alt="" style={{ ...cornerBase, bottom: 0, left: 0 }} />
-        <img src="/bottom-right-corner.png" alt="" style={{ ...cornerBase, bottom: 0, right: 0 }} />
+        <img src={`${import.meta.env.BASE_URL}top-left-corner.png`} alt="" style={{ ...cornerBase, top: 0, left: 0 }} />
+        <img src={`${import.meta.env.BASE_URL}top-right-corner.png`} alt="" style={{ ...cornerBase, top: 0, right: 0 }} />
+        <img src={`${import.meta.env.BASE_URL}bottom-left-corner.png`} alt="" style={{ ...cornerBase, bottom: 0, left: 0 }} />
+        <img src={`${import.meta.env.BASE_URL}bottom-right-corner.png`} alt="" style={{ ...cornerBase, bottom: 0, right: 0 }} />
       </div>
 
       <div style={{ position: 'relative', zIndex: 1 }}>
