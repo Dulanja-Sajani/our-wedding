@@ -6,13 +6,11 @@ import Footer from './components/Footer';
 
 const cornerBase: React.CSSProperties = {
   position: 'fixed',
-  width: 150,
-  height: 266,
+  width: 'clamp(60px, 12vw, 120px)',
+  height: 'auto',
   opacity: 0.95,
   pointerEvents: 'none',
   zIndex: 50,
-  backgroundSize: 'contain',
-  backgroundRepeat: 'no-repeat',
 };
 
 export default function App() {

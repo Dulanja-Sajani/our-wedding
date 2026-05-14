@@ -145,4 +145,48 @@
   .text-beige { color: var(--beige); }
   .bg-champagne-gradient { background: linear-gradient(135deg, var(--champagne-light) 0%, var(--beige-light) 100%); }
   .border-champagne { border-color: var(--champagne); }
+
+  .gallery-image {
+    @apply w-full h-full object-cover;
+  }
+}
+
+/* Hero parents grid – desktop: image spans center column across all 7 rows */
+.parents-grid .pg-photo    { grid-column: 2; grid-row: 1 / 8; }
+.parents-grid .pg-g-father { grid-column: 1; grid-row: 1; }
+.parents-grid .pg-b-father { grid-column: 3; grid-row: 1; }
+.parents-grid .pg-g-pat    { grid-column: 1; grid-row: 2; }
+.parents-grid .pg-b-pat    { grid-column: 3; grid-row: 2; }
+.parents-grid .pg-g-saha   { grid-column: 1; grid-row: 3; }
+.parents-grid .pg-b-saha   { grid-column: 3; grid-row: 3; }
+.parents-grid .pg-g-mother { grid-column: 1; grid-row: 4; }
+.parents-grid .pg-b-mother { grid-column: 3; grid-row: 4; }
+.parents-grid .pg-g-mat    { grid-column: 1; grid-row: 5; }
+.parents-grid .pg-b-mat    { grid-column: 3; grid-row: 5; }
+.parents-grid .pg-g-role   { grid-column: 1; grid-row: 6; }
+.parents-grid .pg-b-role   { grid-column: 3; grid-row: 6; }
+.parents-grid .pg-g-name   { grid-column: 1; grid-row: 7; }
+.parents-grid .pg-b-name   { grid-column: 3; grid-row: 7; }
+
+/* Mobile: photo full-width on top, parents side-by-side below */
+@media (max-width: 768px) {
+  .parents-grid {
+    grid-template-columns: 1fr 1fr !important;
+    align-items: start !important;
+  }
+  .parents-grid .pg-photo    { grid-column: 1 / 3; grid-row: 1; width: min(80vw, 350px) !important; height: calc(min(80vw, 350px) * 1.25) !important; margin: 0 auto 12px; }
+  .parents-grid .pg-g-father { grid-column: 1; grid-row: 2; }
+  .parents-grid .pg-b-father { grid-column: 2; grid-row: 2; }
+  .parents-grid .pg-g-pat    { grid-column: 1; grid-row: 3; }
+  .parents-grid .pg-b-pat    { grid-column: 2; grid-row: 3; }
+  .parents-grid .pg-g-saha   { grid-column: 1; grid-row: 4; }
+  .parents-grid .pg-b-saha   { grid-column: 2; grid-row: 4; }
+  .parents-grid .pg-g-mother { grid-column: 1; grid-row: 5; }
+  .parents-grid .pg-b-mother { grid-column: 2; grid-row: 5; }
+  .parents-grid .pg-g-mat    { grid-column: 1; grid-row: 6; }
+  .parents-grid .pg-b-mat    { grid-column: 2; grid-row: 6; }
+  .parents-grid .pg-g-role   { grid-column: 1; grid-row: 7; }
+  .parents-grid .pg-b-role   { grid-column: 2; grid-row: 7; }
+  .parents-grid .pg-g-name   { grid-column: 1; grid-row: 8; }
+  .parents-grid .pg-b-name   { grid-column: 2; grid-row: 8; }
 }

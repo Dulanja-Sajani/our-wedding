@@ -64,8 +64,13 @@ export default function Gallery() {
                          cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold/50"
               aria-label={`Open ${slot.label}`}
             >
-              {/* Placeholder content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-4">
+              <img
+                src={`https://picsum.photos/seed/${slot.id}/400`}
+                alt={slot.label}
+                className="gallery-image"
+              />
+              {/* Placeholder content as fallback */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-4 bg-champagne-light/60">
                 <div className="w-12 h-12 rounded-full border-2 border-gold/40 group-hover:border-gold/70
                                 flex items-center justify-center transition-colors">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -108,13 +113,11 @@ export default function Gallery() {
                         border-2 border-gold/40 bg-ivory/90 animate-scale-in"
             onClick={e => e.stopPropagation()}
           >
-            {/* Placeholder */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <p className="font-sinhala text-brown/40 text-sm">
-                {activeSlot ? `ඡායාරූපය ${activeSlot}` : ''}
-              </p>
-              <p className="font-garamond italic text-brown/30 text-xs mt-1">Photo placeholder</p>
-            </div>
+            <img
+              src={`https://picsum.photos/seed/${activeSlot}/800`}
+              alt={`Photo ${activeSlot}`}
+              className="gallery-image"
+            />
             {/* Close button */}
             <button
               onClick={() => setLightboxOpen(false)}
