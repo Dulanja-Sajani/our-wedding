@@ -208,6 +208,8 @@ export default function Hero() {
                 {guest.name}{' '}
                 {guest.inviteType === 'Individual'
                   ? (guest.gender === 'male' ? 'මහතාට' : 'මහත්මියට')
+                  : guest.inviteType === 'Couple'
+                  ? 'මහතා සහ මහත්මියට'
                   : (guest.gender === 'male' ? 'මහතා' : 'මහත්මිය')}
               </p>
             ) : (
@@ -216,7 +218,7 @@ export default function Hero() {
                 ගෞරවනීය ආරාධිතයන්
               </p>
             )}
-            {(!guest || guest.inviteType !== 'Individual') && (
+            {(!guest || guest.inviteType === 'Family') && (
               <p className="font-sinhala text-base text-brown/70 mt-1">
                 ඇතුළු පවුලේ සැමට
               </p>
