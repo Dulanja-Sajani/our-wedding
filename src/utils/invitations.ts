@@ -1,4 +1,4 @@
-import { generateToken, buildRsvpUrl } from './tokenGenerator';
+import { buildRsvpUrl } from './tokenGenerator';
 import type { Guest } from '../data/guests';
 
 interface InvitationPayload {
@@ -33,7 +33,6 @@ export async function sendInvitationsToGuests(
 
   for (const guest of guests) {
     try {
-      const token = generateToken(guest.id);
       const rsvpUrl = buildRsvpUrl(guest.id, baseUrl);
 
       const payload: InvitationPayload = {
