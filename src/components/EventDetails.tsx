@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import dividerFlourishSrc from '../assets/svg/divider-flourish.svg';
 
 interface TimeLeft {
   days: number;
@@ -60,7 +59,7 @@ export default function EventDetails() {
     return () => observer.disconnect();
   }, []);
 
-  const CountdownUnit = ({ value, label, sinLabel }: { value: number; label: string; sinLabel: string }) => (
+  const CountdownUnit = ({ value, sinLabel }: { value: number; sinLabel: string }) => (
     <div className="flex flex-col items-center min-w-[60px]">
       <div className="relative">
         <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg flex flex-col items-center justify-center
@@ -100,13 +99,13 @@ export default function EventDetails() {
                   : 'දිනය එළඹ ඇත!'}
               </p>
               <div className="flex items-start justify-center gap-2 sm:gap-4 flex-nowrap">
-                <CountdownUnit value={timeLeft.days} label="Days" sinLabel="දින"/>
+                <CountdownUnit value={timeLeft.days} sinLabel="දින"/>
                 <span className="text-gold/60 text-2xl mt-4">:</span>
-                <CountdownUnit value={timeLeft.hours} label="Hours" sinLabel="පැය"/>
+                <CountdownUnit value={timeLeft.hours} sinLabel="පැය"/>
                 <span className="text-gold/60 text-2xl mt-4">:</span>
-                <CountdownUnit value={timeLeft.minutes} label="Minutes" sinLabel="මිනිත්තු"/>
+                <CountdownUnit value={timeLeft.minutes} sinLabel="මිනිත්තු"/>
                 <span className="text-gold/60 text-2xl mt-4">:</span>
-                <CountdownUnit value={timeLeft.seconds} label="Seconds" sinLabel="තත්පර"/>
+                <CountdownUnit value={timeLeft.seconds} sinLabel="තත්පර"/>
               </div>
             </div>
             {/* Thin gold line */}
