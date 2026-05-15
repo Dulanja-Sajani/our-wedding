@@ -1,4 +1,14 @@
-import { guests } from '../data/guests';
+import { useState, useEffect } from 'react';
+import { type Guest, getGuestByToken } from '../data/guests';
+
+export function useInvitedGuest(): Guest | null {
+  const [guest, setGuest] = useState<Guest | null>(null);
+  useEffect(() => {
+    const token = new URLSearchParams(window.location.search).get('guest');
+    if (token) setGuest(getGuestByToken(token));
+  }, []);
+  return guest;
+}
 
 const s: Record<string, React.CSSProperties> = {
   section: {
@@ -7,7 +17,7 @@ const s: Record<string, React.CSSProperties> = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '10px 20px 250px',
+    padding: '10px 20px 0',
     position: 'relative',
     overflow: 'hidden',
   },
@@ -81,6 +91,8 @@ const s: Record<string, React.CSSProperties> = {
 const NBSP = ' ';
 
 export default function Hero() {
+  const guest = useInvitedGuest();
+
   return (
     <section style={s.section}>
 
@@ -188,16 +200,21 @@ export default function Hero() {
             Waters Edge Hotel, Battaramulla
           </p> */}
 
-          {/* Guest names */}
+          {/* Guest name */}
           <div style={{marginTop: '18px'}}>
-            {guests.map(g => (
-              <p key={g.id} className="font-sinhala font-bold text-xl sm:text-2xl mb-4"
+            {guest ? (
+              <p className="font-sinhala font-bold text-xl sm:text-2xl mb-4"
                   style={{color:'#C9960C', textShadow:'0 1px 8px rgba(201,150,12,0.2)'}}>
-                {g.name}
+                {guest.name} {guest.gender === 'male' ? 'මහතා' : 'මහත්මිය'}
               </p>
-            ))}
+            ) : (
+              <p className="font-sinhala font-bold text-xl sm:text-2xl mb-4"
+                  style={{color:'#C9960C', textShadow:'0 1px 8px rgba(201,150,12,0.2)'}}>
+                ගෞරවනීය ආරාධිතයන්
+              </p>
+            )}
             <p className="font-sinhala text-base text-brown/70 mt-1">
-              මහතා/මහත්මිය ඇතුළු පවුලේ සැමට
+              ඇතුළු පවුලේ සැමට
             </p>
             <p className="font-sinhala text-base sm:text-lg text-brown/80 mt-3">
               කෙරෙන ගෞරවනීය ඇරයුමයි මේ.

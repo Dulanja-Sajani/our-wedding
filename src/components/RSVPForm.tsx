@@ -1,65 +1,36 @@
 import { useEffect, useRef, useState } from 'react';
 import dividerFlourishSrc from '../assets/svg/divider-flourish.svg';
+import { useInvitedGuest } from './Hero';
 
 type AttendingStatus = 'yes' | 'no' | 'maybe' | null;
 
 interface FormData {
-  fullName: string;
-  phone: string;
   attending: AttendingStatus;
   guestCount: number;
-  dietary: string;
   message: string;
-  guestToken?: string; // Personalization token from invitation link
-}
-
-function decodeToken(token: string): { guestId: number; guestEmail: string } | null {
-  try {
-    const padded = token + '='.repeat((4 - (token.length % 4)) % 4);
-    const decoded = atob(padded);
-    const [guestIdStr, guestEmail] = decoded.split(':');
-    const guestId = parseInt(guestIdStr, 10);
-    if (!isNaN(guestId)) {
-      return { guestId, guestEmail };
-    }
-  } catch (error) {
-    console.error('Token decode error:', error);
-  }
-  return null;
+  guestToken?: string;
 }
 
 export default function RSVPForm() {
   const sectionRef = useRef<HTMLElement>(null);
+  const guest = useInvitedGuest();
   const [formData, setFormData] = useState<FormData>({
-    fullName: '',
-    phone: '',
     attending: null,
     guestCount: 1,
-    dietary: '',
     message: '',
     guestToken: undefined,
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   useEffect(() => {
-    // Extract guest token from URL parameters
+    if (guest) setFormData(d => ({ ...d, guestCount: guest.count }));
+  }, [guest]);
+
+  useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const token = params.get('guest');
-    
-    if (token) {
-      const decoded = decodeToken(token);
-      if (decoded) {
-        // Pre-fill name from email address
-        const nameFromEmail = decoded.guestEmail.split('@')[0].replace(/[._]/g, ' ');
-        setFormData(d => ({
-          ...d,
-          fullName: nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1),
-          guestToken: token,
-        }));
-      }
-    }
+    if (token) setFormData(d => ({ ...d, guestToken: token }));
 
-    // Intersection observer for animations
     const el = sectionRef.current;
     if (!el) return;
     const observer = new IntersectionObserver(
@@ -72,22 +43,19 @@ export default function RSVPForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName || !formData.attending) return;
+    if (!formData.attending) return;
 
     setStatus('submitting');
     try {
-      // Replace REPLACE_WITH_YOUR_ID with your actual Formspree form ID
       const response = await fetch('https://formspree.io/f/REPLACE_WITH_YOUR_ID', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
-          'Full Name': formData.fullName,
-          'Phone / WhatsApp': formData.phone,
-          'Attending': formData.attending === 'yes' ? 'Yes - Happily' : formData.attending === 'no' ? 'No - With Regret' : 'Not Sure Yet',
+          ...(guest && { 'Guest Name': guest.name }),
+          'Attending': formData.attending === 'yes' ? 'Yes - Happily' : 'No - With Regret',
           'Guest Count': formData.guestCount,
-          'Dietary Requirements': formData.dietary || 'None',
           'Message to Couple': formData.message || 'None',
-          ...(formData.guestToken && { 'Guest Token': formData.guestToken }), // Include token for verification
+          ...(formData.guestToken && { 'Guest Token': formData.guestToken }),
         }),
       });
       if (response.ok) {
@@ -121,7 +89,6 @@ export default function RSVPForm() {
       <section ref={sectionRef} className="section-animate py-12 sm:py-16 px-4 sm:px-8">
         <div className="max-w-xl mx-auto text-center">
           <div className="marble-card rounded-2xl p-10 animate-scale-in">
-            {/* Animated checkmark */}
             <svg width="80" height="80" viewBox="0 0 80 80" className="mx-auto mb-6">
               <circle cx="40" cy="40" r="36" fill="none" stroke="#D4AF37" strokeWidth="3"/>
               <polyline
@@ -165,49 +132,12 @@ export default function RSVPForm() {
           <h2 className="font-sinhala font-bold text-2xl sm:text-3xl lg:text-4xl text-gold">
             ගෞරවනීය ඇරයුම
           </h2>
-          <p className="font-fell italic text-lg sm:text-xl text-brown/70 mt-2">
-            The Gracious Invitation
-          </p>
           <p className="font-garamond text-base text-brown/60 mt-1">
             Kindly reply by July 15, 2026
           </p>
-          <div className="mt-4">
-            <img src={dividerFlourishSrc} alt="" aria-hidden="true" className="w-full max-w-sm mx-auto"/>
-          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="marble-card rounded-2xl p-6 sm:p-8 space-y-6">
-
-          {/* Full Name */}
-          <div>
-            <label className="block font-sinhala text-sm sm:text-base text-brown font-semibold mb-1.5">
-              ඔබේ සම්පූර්ණ නම <span className="text-accent-red">*</span>
-              <span className="font-garamond text-xs font-normal italic text-brown/50 ml-2">Full Name</span>
-            </label>
-            <input
-              type="text"
-              required
-              value={formData.fullName}
-              onChange={e => setFormData(d => ({ ...d, fullName: e.target.value }))}
-              className="gold-input w-full px-4 py-3 rounded-lg text-base"
-              placeholder="Your full name"
-            />
-          </div>
-
-          {/* Phone */}
-          <div>
-            <label className="block font-sinhala text-sm sm:text-base text-brown font-semibold mb-1.5">
-              දුරකථන අංකය
-              <span className="font-garamond text-xs font-normal italic text-brown/50 ml-2">Phone / WhatsApp</span>
-            </label>
-            <input
-              type="tel"
-              value={formData.phone}
-              onChange={e => setFormData(d => ({ ...d, phone: e.target.value }))}
-              className="gold-input w-full px-4 py-3 rounded-lg text-base"
-              placeholder="+94 XX XXX XXXX"
-            />
-          </div>
 
           {/* Attending status */}
           <div>
@@ -218,7 +148,6 @@ export default function RSVPForm() {
             <div className="flex gap-2 sm:gap-3">
               <AttendBtn value="yes" label="ඔව් — සතුටින්" sublabel="Yes, Happily"/>
               <AttendBtn value="no" label="නැත — සමාවෙන්න" sublabel="No, With Regret"/>
-              <AttendBtn value="maybe" label="තවම නොදනිමි" sublabel="Not Sure Yet"/>
             </div>
           </div>
 
@@ -242,7 +171,7 @@ export default function RSVPForm() {
                 </span>
                 <button
                   type="button"
-                  onClick={() => setFormData(d => ({ ...d, guestCount: Math.min(10, d.guestCount + 1) }))}
+                  onClick={() => setFormData(d => ({ ...d, guestCount: Math.min(guest?.count ?? 10, d.guestCount + 1) }))}
                   className="w-10 h-10 rounded-full border-2 border-gold/60 text-gold font-bold text-xl
                              hover:bg-gold/10 transition-colors flex items-center justify-center"
                   aria-label="Increase"
@@ -250,21 +179,6 @@ export default function RSVPForm() {
               </div>
             </div>
           )}
-
-          {/* Dietary requirements */}
-          <div>
-            <label className="block font-sinhala text-sm sm:text-base text-brown font-semibold mb-1.5">
-              ආහාර අවශ්‍යතා
-              <span className="font-garamond text-xs font-normal italic text-brown/50 ml-2">Dietary requirements (optional)</span>
-            </label>
-            <input
-              type="text"
-              value={formData.dietary}
-              onChange={e => setFormData(d => ({ ...d, dietary: e.target.value }))}
-              className="gold-input w-full px-4 py-3 rounded-lg text-base"
-              placeholder="Vegetarian, allergies, etc."
-            />
-          </div>
 
           {/* Message */}
           <div>
@@ -296,7 +210,7 @@ export default function RSVPForm() {
           {/* Submit button */}
           <button
             type="submit"
-            disabled={status === 'submitting' || !formData.fullName || !formData.attending}
+            disabled={status === 'submitting' || !formData.attending}
             className="gold-btn w-full py-4 rounded-xl text-base sm:text-lg
                        disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >

@@ -1,6 +1,11 @@
-id,name,phone,gender,inviteType,invitationSent,rsvpReceived,rsvpStatus
-1,John Doe,+1234567890,Male,Individual,FALSE,FALSE,
-2,Jane Smith,+1234567891,Female,Couple,FALSE,FALSE,
-3,Bob Johnson,+1234567892,Male,Individual,FALSE,FALSE,
-4,Sarah Williams,+1234567893,Female,Family,FALSE,FALSE,
-5,Michael Brown,+1234567894,Male,Couple,FALSE,FALSE,
+id,name,phone,gender,inviteType,count,invitationSent,rsvpReceived,rsvpStatus
+1,පැතුම් පෙරේරා,+94711234567,Male,Individual,1,FALSE,FALSE,
+2,කුසුම් ද සිල්වා,+94772234568,Female,Couple,2,FALSE,FALSE,
+3,අසංක ප්‍රනාන්දු,+94753234569,Male,Family,4,FALSE,FALSE,
+4,නිලන්ති විජේසිංහ,+94704234570,Female,Individual,1,FALSE,FALSE,
+5,දිනේෂ් ගුණවර්ධන,+94715234571,Male,Couple,2,FALSE,FALSE,
+6,චතුරිකා ජයසූරිය,+94776234572,Female,Family,5,FALSE,FALSE,
+7,රොහාන් අබේසිංහ,+94757234573,Male,Individual,1,FALSE,FALSE,
+8,සන්ධ්‍යා කුමාරි,+94708234574,Female,Couple,2,FALSE,FALSE,
+9,තරිඳු ලියනගේ,+94719234575,Male,Individual,1,FALSE,FALSE,
+10,ඉෂානි කරුණාරත්න,+94770234576,Female,Family,3,FALSE,FALSE,

@@ -9,8 +9,8 @@ interface TimeLeft {
 }
 
 const SINHALA_DIGITS: Record<string, string> = {
-  '0': '෦', '1': '෧', '2': '෨', '3': '෩', '4': '෪',
-  '5': '෫', '6': '෬', '7': '෭', '8': '෮', '9': '෯',
+  '0': '0', '1': '1', '2': '2', '3': '3', '4': '4',
+  '5': '5', '6': '6', '7': '7', '8': '8', '9': '9',
 };
 
 function toSinhalaNumRaw(n: number): string {
@@ -68,13 +68,9 @@ export default function EventDetails() {
           <span className="font-sinhala text-xl sm:text-2xl font-bold text-gold leading-none">
             {toSinhalaNumRaw(value)}
           </span>
-          <span className="font-garamond text-xs text-gold/60 mt-0.5">
-            {String(value).padStart(2, '0')}
-          </span>
         </div>
       </div>
       <span className="font-sinhala text-xs text-brown/70 mt-1">{sinLabel}</span>
-      <span className="font-garamond text-xs text-brown/50 italic">{label}</span>
     </div>
   );
 
@@ -86,51 +82,35 @@ export default function EventDetails() {
 
           {/* Content */}
           <div className="relative z-10">
-            {/* Top divider */}
-            <img src={dividerFlourishSrc} alt="" aria-hidden="true" className="w-full max-w-md mx-auto mb-6"/>
-
-            {/* Invitation text */}
-            <p className="font-sinhala text-center text-base sm:text-lg text-brown/80 leading-relaxed mb-4">
-              අතිනත ගැනීමේ ප්‍රීතිය නිමිත්තෙන්
-            </p>
-            <p className="font-garamond italic text-center text-base sm:text-lg text-brown/60 mb-6">
-              With the joy of joining hands in marriage
-            </p>
-
-            {/* Date block */}
-            <div className="text-center mb-2">
-              <div className="inline-block">
-                <p className="font-sinhala font-bold text-2xl sm:text-3xl lg:text-4xl"
-                   style={{color: '#C9960C', textShadow: '0 1px 8px rgba(201,150,12,0.2)'}}>
-                  2026 ජූලි මස 30
-                </p>
-                <p className="font-sinhala text-base sm:text-lg text-brown/70 mt-1">
-                  බෘහස්පතින්දා
-                </p>
-                <p className="font-garamond italic text-sm sm:text-base text-brown/50">
-                  Thursday, 30th July 2026
-                </p>
-              </div>
-            </div>
+      
 
             {/* Thin gold line */}
+            {/* <div className="w-32 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto my-4"/> */}
+
+
+      
+
+            
+
+            {/* Countdown timer */}
+            <div className="text-center mb-4">
+              <p className="font-sinhala text-sm text-gold/70 mb-4">
+                {timeLeft.days > 0
+                  ? `දිනයට ඉතිරිව ඇත: ${toSinhalaNumRaw(timeLeft.days)} දිනයක්`
+                  : 'දිනය එළඹ ඇත!'}
+              </p>
+              <div className="flex items-start justify-center gap-2 sm:gap-4 flex-nowrap">
+                <CountdownUnit value={timeLeft.days} label="Days" sinLabel="දින"/>
+                <span className="text-gold/60 text-2xl mt-4">:</span>
+                <CountdownUnit value={timeLeft.hours} label="Hours" sinLabel="පැය"/>
+                <span className="text-gold/60 text-2xl mt-4">:</span>
+                <CountdownUnit value={timeLeft.minutes} label="Minutes" sinLabel="මිනිත්තු"/>
+                <span className="text-gold/60 text-2xl mt-4">:</span>
+                <CountdownUnit value={timeLeft.seconds} label="Seconds" sinLabel="තත්පර"/>
+              </div>
+            </div>
+            {/* Thin gold line */}
             <div className="w-32 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto my-4"/>
-
-            {/* Time block */}
-            <div className="text-center mb-2">
-              <p className="font-sinhala text-lg sm:text-xl font-semibold text-brown">
-                ප.ව. 4.30 සිට
-              </p>
-              <p className="font-garamond text-sm text-brown/60 italic">Commencing at 4:30 PM</p>
-            </div>
-
-            <div className="text-center mb-6">
-              <p className="font-sinhala text-base sm:text-lg text-brown/80">
-                <span className="font-bold text-accent-red">පොරොව වාරිතු</span> — ප.ව. 4.50
-              </p>
-              <p className="font-garamond text-sm text-brown/60 italic">Poruwa Ceremony at 4:50 PM</p>
-            </div>
-
             {/* Venue */}
             <div className="text-center mb-6">
               <p className="font-sinhala font-bold text-xl sm:text-2xl lg:text-3xl text-brown leading-tight"
@@ -138,15 +118,15 @@ export default function EventDetails() {
                 බත්තරමුල්ල
               </p>
               <p className="font-sinhala font-bold text-xl sm:text-2xl lg:text-3xl text-brown leading-tight">
-                වෝටර්ස් එජ් හෝටලයේදී
+                වෝටර්ස් එජ් හෝටලය
               </p>
               <p className="font-garamond italic text-base text-brown/60 mt-1">
                 Waters Edge Hotel, Battaramulla
               </p>
             </div>
 
-            {/* Google Maps button */}
-            <div className="flex justify-center mb-8">
+            {/* Google Maps + Calendar buttons */}
+            <div className="flex justify-center gap-3 mt-1 flex-wrap">
               <a
                 href="https://maps.google.com/?q=Waters+Edge+Hotel+Battaramulla+Sri+Lanka"
                 target="_blank"
@@ -157,28 +137,20 @@ export default function EventDetails() {
                 <span>📍</span>
                 <span>Get Directions</span>
               </a>
-            </div>
-
-            {/* Countdown timer */}
-            <div className="text-center mb-4">
-              <p className="font-sinhala text-sm text-gold/70 mb-4">
-                {timeLeft.days > 0
-                  ? `දිනයට ඉතිරිව ඇත: ${toSinhalaNumRaw(timeLeft.days)} දිනයක්`
-                  : 'දිනය එළඹ ඇත!'}
-              </p>
-              <div className="flex items-start justify-center gap-2 sm:gap-4 flex-wrap">
-                <CountdownUnit value={timeLeft.days} label="Days" sinLabel="දින"/>
-                <span className="text-gold/60 text-2xl mt-4">:</span>
-                <CountdownUnit value={timeLeft.hours} label="Hours" sinLabel="පැය"/>
-                <span className="text-gold/60 text-2xl mt-4">:</span>
-                <CountdownUnit value={timeLeft.minutes} label="Minutes" sinLabel="මිනිත්තු"/>
-                <span className="text-gold/60 text-2xl mt-4">:</span>
-                <CountdownUnit value={timeLeft.seconds} label="Seconds" sinLabel="තත්පර"/>
-              </div>
+              <a
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dulanja+%26+Sajani+Wedding&dates=20260730T110000Z%2F20260730T160000Z&details=Poruwa+Ceremony+at+4%3A50+PM%0AWaters+Edge+Hotel%2C+Battaramulla&location=Waters+Edge+Hotel%2C+Battaramulla%2C+Sri+Lanka"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gold-btn px-6 py-3 rounded-full text-sm sm:text-base font-garamond
+                           flex items-center gap-2 no-underline"
+              >
+                <span>📅</span>
+                <span>Add to Calendar</span>
+              </a>
             </div>
 
             {/* Bottom divider */}
-            <img src={dividerFlourishSrc} alt="" aria-hidden="true" className="w-full max-w-md mx-auto mt-6"/>
+            {/* <img src={dividerFlourishSrc} alt="" aria-hidden="true" className="w-full max-w-md mx-auto mt-6"/> */}
           </div>
         </div>
       </div>
