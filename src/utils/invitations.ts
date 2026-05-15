@@ -1,12 +1,5 @@
 import { generateToken, buildRsvpUrl } from './tokenGenerator';
-
-interface Guest {
-  id: number;
-  name: string;
-  email: string;
-  phone: string;
-  relationship: string;
-}
+import type { Guest } from '../data/guests';
 
 interface InvitationPayload {
   guestName: string;
