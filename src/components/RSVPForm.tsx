@@ -47,9 +47,12 @@ export default function RSVPForm() {
 
     setStatus('submitting');
     try {
-      const response = await fetch('https://formspree.io/f/REPLACE_WITH_YOUR_ID', {
+      // Google Apps Script requires text/plain to avoid a CORS preflight.
+      // The response is opaque (no-cors) so we show success optimistically.
+      await fetch(import.meta.env.VITE_RSVP_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({
           ...(guest && { 'Guest Name': guest.name }),
           'Attending': formData.attending === 'yes' ? 'Yes - Happily' : 'No - With Regret',
@@ -58,11 +61,7 @@ export default function RSVPForm() {
           ...(formData.guestToken && { 'Guest Token': formData.guestToken }),
         }),
       });
-      if (response.ok) {
-        setStatus('success');
-      } else {
-        setStatus('error');
-      }
+      setStatus('success');
     } catch {
       setStatus('error');
     }

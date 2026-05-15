@@ -35,6 +35,8 @@ jobs:
         run: node scripts/sync-guests.mjs
 
       - name: Build
+        env:
+          VITE_RSVP_ENDPOINT: ${{ secrets.VITE_RSVP_ENDPOINT }}
         run: npm run build
 
       - name: Upload artifact
