@@ -28,19 +28,11 @@ export default function Footer() {
 
           {/* Center text */}
           <div className="flex-1 text-center px-2">
-            <blockquote className="font-sinhala text-sm sm:text-base text-brown/80 leading-relaxed mb-3">
-              "ඔබට / ඔබ දෙපළට / ඔබ සෙමට කෙරෙන ගෞරවනීය ඇරයුමයි මේ."
-            </blockquote>
-            <p className="font-garamond italic text-xs sm:text-sm text-brown/50 mb-6 leading-relaxed">
-              "This is a gracious invitation extended to you,<br className="hidden sm:inline"/>
-              your family, and loved ones."
-            </p>
-
             {/* Names again */}
             <div className="flex items-center justify-center gap-2 sm:gap-4 mb-2">
-              <span className="font-sinhala text-sm sm:text-base font-semibold text-gold">දුලංජ්</span>
+              <span className="font-sinhala text-sm sm:text-base font-semibold text-gold">දුලංජ</span>
               <span className="text-gold/40 text-xl">♥</span>
-              <span className="font-sinhala text-sm sm:text-base font-semibold text-gold">සප්තී</span>
+              <span className="font-sinhala text-sm sm:text-base font-semibold text-gold">සජනි</span>
             </div>
 
             {/* Date reminder */}
@@ -56,7 +48,7 @@ export default function Footer() {
 
             {/* Copyright */}
             <p className="font-garamond text-xs text-brown/30 mt-6">
-              © 2026 Dulanj &amp; Sapthi
+              © 2026 Dulanja &amp; Sajani
             </p>
           </div>
 
