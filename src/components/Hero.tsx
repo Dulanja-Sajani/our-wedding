@@ -205,7 +205,10 @@ export default function Hero() {
             {guest ? (
               <p className="font-sinhala font-bold text-xl sm:text-2xl mb-4"
                   style={{color:'#C9960C', textShadow:'0 1px 8px rgba(201,150,12,0.2)'}}>
-                {guest.name} {guest.gender === 'male' ? 'මහතා' : 'මහත්මිය'}
+                {guest.name}{' '}
+                {guest.inviteType === 'Individual'
+                  ? (guest.gender === 'male' ? 'මහතාට' : 'මහත්මියට')
+                  : (guest.gender === 'male' ? 'මහතා' : 'මහත්මිය')}
               </p>
             ) : (
               <p className="font-sinhala font-bold text-xl sm:text-2xl mb-4"
@@ -213,9 +216,11 @@ export default function Hero() {
                 ගෞරවනීය ආරාධිතයන්
               </p>
             )}
-            <p className="font-sinhala text-base text-brown/70 mt-1">
-              ඇතුළු පවුලේ සැමට
-            </p>
+            {(!guest || guest.inviteType !== 'Individual') && (
+              <p className="font-sinhala text-base text-brown/70 mt-1">
+                ඇතුළු පවුලේ සැමට
+              </p>
+            )}
             <p className="font-sinhala text-base sm:text-lg text-brown/80 mt-3">
               කෙරෙන ගෞරවනීය ඇරයුමයි මේ.
             </p>
