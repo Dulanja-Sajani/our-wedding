@@ -62,6 +62,11 @@ Google Sheet (RSVPs tab)
    - *Execute as*: **Me**
    - *Who has access*: **Anyone**
 7. Click **Deploy**, then copy the **Web app URL**
+8. Back in the script editor, select `fillInvitationUrls` from the function dropdown and click **Run (▶)**
+   — this adds an **Invitation URL** column to your guest sheet and fills every row
+
+> After this one-time run, URLs are filled automatically whenever you add or edit a row.
+> A **Wedding** menu also appears in your sheet toolbar so you can re-run it anytime.
 
 ---
 
@@ -100,8 +105,19 @@ The site will be live at **https://dulanja-sajani.github.io/our-wedding/** withi
 ### Adding a new guest
 
 1. Add a new row in the Google Sheet with the next unused `id`
-2. Push any change to `main` — the build will sync automatically
-3. Run the URL generator locally to get their link (see below)
+2. The **Invitation URL** column fills automatically (via the `onEdit` trigger)
+3. Copy the URL from that column and send it via WhatsApp
+4. Push any change to `main` — the build syncs the sheet and the new guest appears on the live site
+
+### Sending invitations from the sheet
+
+After running `fillInvitationUrls()` once, every guest has their link right in the sheet:
+
+| id | name | phone | ... | Invitation URL |
+|----|------|-------|-----|----------------|
+| 1 | දුලංජ පෙරේරා | +94711234567 | ... | https://dulanja-sajani.github.io/our-wedding/?guest=dzox |
+
+Copy each URL and paste into WhatsApp. You can also select the cell and use **Ctrl+C** to share.
 
 ### Never renumber IDs
 
@@ -109,9 +125,9 @@ Once a URL has been shared, the `id` must never change. If you remove a guest, l
 
 ---
 
-## Generating Invitation URLs
+## Generating Invitation URLs (alternative — local script)
 
-Run locally to print every guest's personalised link:
+If you prefer to generate all URLs in one go from the terminal:
 
 ```bash
 SHEETS_CSV_URL=<your-csv-url> node scripts/sync-guests.mjs
@@ -133,8 +149,6 @@ Save to a file:
 ```bash
 node scripts/generate-urls.mjs > invitation-urls.txt
 ```
-
-Then copy each URL into WhatsApp manually.
 
 ---
 
@@ -182,6 +196,11 @@ SHEETS_CSV_URL=<your-url> node scripts/sync-guests.mjs
 ---
 
 ## Troubleshooting
+
+**Invitation URL column not appearing**
+- Open Apps Script editor, select `fillInvitationUrls` from the dropdown, click Run (▶)
+- If you see a "Sheet not found" alert, update the `GUEST_SHEET` constant to match your tab name
+- The `onEdit` trigger only fires on manual edits — it won't backfill existing rows; use `fillInvitationUrls()` for that
 
 **RSVPs not appearing in the sheet**
 - Open Apps Script editor → **Executions** tab — check for errors
