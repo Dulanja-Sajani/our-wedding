@@ -6,7 +6,7 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const BASE_URL = 'https://pankajabalasooriya.github.io/sinhala-wedding-rsvp';
+const BASE_URL = 'https://dulanja-sajani.github.io/our-wedding';
 
 function generateToken(id) {
   return Buffer.from(`w:${id}`).toString('base64').replace(/=/g, '');

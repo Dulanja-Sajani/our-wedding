@@ -29,7 +29,15 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build
+      - name: Sync guest list from Google Sheets
+        run: node scripts/sync-guests.mjs
+        env:
+          SHEETS_CSV_URL: ${{ secrets.SHEETS_CSV_URL }}
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_RSVP_ENDPOINT: ${{ secrets.VITE_RSVP_ENDPOINT }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
