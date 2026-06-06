@@ -17,6 +17,6 @@ export function decodeToken(token: string): number | null {
   return null;
 }
 
-export function buildRsvpUrl(guestId: number, baseUrl = 'https://pankajabalasooriya.github.io/sinhala-wedding-rsvp'): string {
+export function buildRsvpUrl(guestId: number, baseUrl = 'https://dulanja-sajani.github.io/our-wedding'): string {
   return `${baseUrl}/?guest=${generateToken(guestId)}`;
 }
