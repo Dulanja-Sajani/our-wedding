@@ -1,8 +1,9 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Hero from './components/Hero';
 import EventDetails from './components/EventDetails';
 import RSVPForm from './components/RSVPForm';
 import Footer from './components/Footer';
+import EnvelopeIntro from './components/EnvelopeIntro';
 
 const cornerBase: React.CSSProperties = {
   position: 'fixed',
@@ -15,6 +16,14 @@ const cornerBase: React.CSSProperties = {
 
 export default function App() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [envelopeOpened, setEnvelopeOpened] = useState(
+    () => sessionStorage.getItem('weddingEnvelopeOpened') === '1'
+  );
+
+  function handleEnvelopeDone() {
+    sessionStorage.setItem('weddingEnvelopeOpened', '1');
+    setEnvelopeOpened(true);
+  }
 
   useEffect(() => {
     const onScroll = () => {
@@ -37,6 +46,8 @@ export default function App() {
 
   return (
     <>
+      {!envelopeOpened && <EnvelopeIntro onDone={handleEnvelopeDone} />}
+
       {/* Fixed video background — pans from top to bottom as page scrolls */}
       <video
         ref={videoRef}
