@@ -64,12 +64,12 @@ export default function EventDetails() {
       <div className="relative">
         <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg flex flex-col items-center justify-center
                         border-2 border-gold/60 bg-ivory/80 shadow-gold">
-          <span className="font-sinhala text-xl sm:text-2xl font-bold text-gold leading-none">
+          <span className="font-sinhala text-3xl sm:text-4xl font-bold text-gold leading-none -translate-y-1.5">
             {toSinhalaNumRaw(value)}
           </span>
         </div>
       </div>
-      <span className="font-sinhala text-xs text-brown/70 mt-1">{sinLabel}</span>
+      <span className="font-sinhala text-base text-brown/70 mt-1">{sinLabel}</span>
     </div>
   );
 
@@ -93,18 +93,16 @@ export default function EventDetails() {
 
             {/* Countdown timer */}
             <div className="text-center mb-4">
-              <p className="font-sinhala text-sm text-gold/70 mb-4">
-                {timeLeft.days > 0
-                  ? `Èkhg  b;sßj   we;• ${toSinhalaNumRaw(timeLeft.days)} Èkhgla`
-                  : 'Èkhla t<U we;æ'}{/* දිනයට ඉතිරිව ඇත: / දිනය එළඹ ඇත! */}
+              <p className="font-sinhala text-2xl text-gold/70 mb-4">
+                wfma ojig ;j Èk
               </p>
               <div className="flex items-start justify-center gap-2 sm:gap-4 flex-nowrap">
-                <CountdownUnit value={timeLeft.days} sinLabel="Èkh"/>{/* දින */}
-                <span className="text-gold/60 text-2xl mt-4">:</span>
+                <CountdownUnit value={timeLeft.days} sinLabel="Èk"/>{/* දින */}
+                <span className="font-sans text-gold/60 text-2xl mt-4">:</span>
                 <CountdownUnit value={timeLeft.hours} sinLabel="meh"/>{/* පැය */}
-                <span className="text-gold/60 text-2xl mt-4">:</span>
+                <span className="font-sans text-gold/60 text-2xl mt-4">:</span>
                 <CountdownUnit value={timeLeft.minutes} sinLabel="ñks;a;="/>{/* මිනිත්තු */}
-                <span className="text-gold/60 text-2xl mt-4">:</span>
+                <span className="font-sans text-gold/60 text-2xl mt-4">:</span>
                 <CountdownUnit value={timeLeft.seconds} sinLabel=";;amr"/>{/* තත්පර */}
               </div>
             </div>
@@ -119,8 +117,8 @@ export default function EventDetails() {
               <p className="font-sinhala font-bold text-xl sm:text-2xl lg:text-3xl text-brown leading-tight">
                 fjdag¾ia tÊ    fydag,h{/* වෝටර්ස් එජ් හෝටලය */}
               </p>
-              <p className="font-garamond italic text-base text-brown/60 mt-1">
-                Waters Edge Hotel, Battaramulla
+              <p className="font-sinhala text-base text-brown/60 mt-1">
+                B.,a Yd,dj
               </p>
             </div>
 
@@ -133,7 +131,9 @@ export default function EventDetails() {
                 className="gold-btn px-6 py-3 rounded-full text-sm sm:text-base font-garamond
                            flex items-center gap-2 no-underline"
               >
-                <span>📍</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
                 <span>Get Directions</span>
               </a>
               <a
@@ -143,7 +143,9 @@ export default function EventDetails() {
                 className="gold-btn px-6 py-3 rounded-full text-sm sm:text-base font-garamond
                            flex items-center gap-2 no-underline"
               >
-                <span>📅</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                </svg>
                 <span>Add to Calendar</span>
               </a>
             </div>

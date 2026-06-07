@@ -83,7 +83,7 @@ const s: Record<string, React.CSSProperties> = {
   nameCell: {
     fontFamily: "'Tharu Digital Siyapatha', serif",
     textAlign: 'center',
-    color: 'var(--brown)',
+    color: '#C9960C',
     fontSize: 'clamp(1.7rem,5.5vw,2.5rem)',
     fontWeight: 700,
     paddingTop: 12,
@@ -166,7 +166,7 @@ export default function Hero() {
           <div className="inline-block">
             <p className="font-sinhala font-bold text-3xl sm:text-4xl lg:text-5xl"
                 style={{color: '#C9960C', textShadow: '0 1px 8px rgba(201,150,12,0.2)'}}>
-              2026 cQ,s   ui 30{/* 2026 ජූලි මස 30 */}
+              <span className="text-4xl sm:text-5xl lg:text-6xl">2026</span>lajQ wei&lt;   ui <span className="text-4xl sm:text-5xl lg:text-6xl">30</span> fjks{/* 2026 ජූලි මස 30 */}
             </p>
             <p className="font-sinhala text-lg sm:text-xl text-brown/70 mt-1">
               n%yiam;skaod{/* බ්‍රහස්පතින්දා */}
@@ -193,7 +193,7 @@ export default function Hero() {
             n;a;ruq,a,{/* බත්තරමුල්ල */}
           </p>
           <p className="font-sinhala font-bold text-2xl sm:text-3xl lg:text-4xl text-brown leading-tight">
-            fjdag¾ia tÊ fydag,fha§{/* වෝටර්ස් එජ් හෝටලයේදී */}
+            <span style={{fontFamily:'serif'}}>"</span>fjdag¾ia tÊ<span style={{fontFamily:'serif'}}> "</span> fydag,fha§{/* "වෝටර්ස් එජ්" හෝටලයේදී */}
           </p>
           <p className="font-sinhala text-lg sm:text-xl text-brown/80 mt-4">
             mj;ajk  m%sh   iïNdIKhg{/* පවත්වන ප්‍රිය සම්භාෂණයට */}
@@ -229,11 +229,8 @@ export default function Hero() {
             <p className="font-sinhala text-lg sm:text-xl text-brown/80 mt-3">
               flfrk f.!rjkSh  werhquhs   fï¡{/* කෙරෙන ගෞරවනීය ඇරයුමයි මේ. */}
             </p>
-            <p className="font-sinhala text-lg sm:text-xl font-bold text-accent-red mt-3">
-              fmdarefõ  pdß;%{/* පෝරුවේ චාරිත්‍ර */}
-            </p>
-            <p className="font-sinhala text-lg sm:text-xl font-bold text-accent-red mt-1">
-              m¡j¡ 4¡50{/* ප.ව. 4.50 */}
+            <p className="font-sinhala text-xl sm:text-2xl font-bold text-accent-red mt-3">
+              fmdarefõ  pdß;%  -  m¡j¡ <span className="text-2xl sm:text-3xl">4¡50</span>{/* පෝරුවේ චාරිත්‍ර - ප.ව. 4.50 */}
             </p>
           </div>
         </div>
