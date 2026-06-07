@@ -38,6 +38,19 @@ export default function App() {
   }
 
   useEffect(() => {
+    const onVisibility = () => {
+      if (!audioRef.current) return;
+      if (document.hidden) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play().catch(() => {});
+      }
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    return () => document.removeEventListener('visibilitychange', onVisibility);
+  }, []);
+
+  useEffect(() => {
     const onScroll = () => {
       if (!videoRef.current) return;
       // Portrait viewports: video is already portrait-shaped, centre it
