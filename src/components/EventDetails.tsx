@@ -95,17 +95,17 @@ export default function EventDetails() {
             <div className="text-center mb-4">
               <p className="font-sinhala text-sm text-gold/70 mb-4">
                 {timeLeft.days > 0
-                  ? `දිනයට ඉතිරිව ඇත: ${toSinhalaNumRaw(timeLeft.days)} දිනයක්`
-                  : 'දිනය එළඹ ඇත!'}
+                  ? `Èkhg  b;sßj   we;• ${toSinhalaNumRaw(timeLeft.days)} Èkhgla`
+                  : 'Èkhla t<U we;æ'}{/* දිනයට ඉතිරිව ඇත: / දිනය එළඹ ඇත! */}
               </p>
               <div className="flex items-start justify-center gap-2 sm:gap-4 flex-nowrap">
-                <CountdownUnit value={timeLeft.days} sinLabel="දින"/>
+                <CountdownUnit value={timeLeft.days} sinLabel="Èkh"/>{/* දින */}
                 <span className="text-gold/60 text-2xl mt-4">:</span>
-                <CountdownUnit value={timeLeft.hours} sinLabel="පැය"/>
+                <CountdownUnit value={timeLeft.hours} sinLabel="meh"/>{/* පැය */}
                 <span className="text-gold/60 text-2xl mt-4">:</span>
-                <CountdownUnit value={timeLeft.minutes} sinLabel="මිනිත්තු"/>
+                <CountdownUnit value={timeLeft.minutes} sinLabel="ñks;a;="/>{/* මිනිත්තු */}
                 <span className="text-gold/60 text-2xl mt-4">:</span>
-                <CountdownUnit value={timeLeft.seconds} sinLabel="තත්පර"/>
+                <CountdownUnit value={timeLeft.seconds} sinLabel=";;amr"/>{/* තත්පර */}
               </div>
             </div>
             {/* Thin gold line */}
@@ -114,10 +114,10 @@ export default function EventDetails() {
             <div className="text-center mb-6">
               <p className="font-sinhala font-bold text-xl sm:text-2xl lg:text-3xl text-brown leading-tight"
                  style={{textShadow: '0 1px 4px rgba(61,31,13,0.1)'}}>
-                බත්තරමුල්ල
+                n;a;ruq,a,{/* බත්තරමුල්ල */}
               </p>
               <p className="font-sinhala font-bold text-xl sm:text-2xl lg:text-3xl text-brown leading-tight">
-                වෝටර්ස් එජ් හෝටලය
+                fjdag¾ia tÊ    fydag,h{/* වෝටර්ස් එජ් හෝටලය */}
               </p>
               <p className="font-garamond italic text-base text-brown/60 mt-1">
                 Waters Edge Hotel, Battaramulla

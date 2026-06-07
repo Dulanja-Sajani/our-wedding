@@ -42,7 +42,7 @@ export default function Gallery() {
         {/* Heading */}
         <div className="text-center mb-8">
           <h2 className="font-sinhala font-bold text-2xl sm:text-3xl lg:text-4xl text-gold">
-            අපගේ මතකයන්
+            wmf.a u;lhka{/* අපගේ මතකයන් */}
           </h2>
           <p className="font-fell italic text-lg sm:text-xl text-brown/70 mt-2">
             Our Memories

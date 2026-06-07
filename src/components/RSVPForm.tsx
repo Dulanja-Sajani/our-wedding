@@ -105,10 +105,10 @@ export default function RSVPForm() {
               />
             </svg>
             <h2 className="font-sinhala text-2xl sm:text-3xl font-bold text-gold mb-3">
-              ස්තූතියි!
+              ia;+;shsæ{/* ස්තූතියි! */}
             </h2>
             <p className="font-sinhala text-lg text-brown/80 mb-2">
-              ඔබගේ ප්‍රතිචාරය ලැබිණි.
+              Tnf.a m%;spdrh   ,eìKs¡{/* ඔබගේ ප්‍රතිචාරය ලැබිණි. */}
             </p>
             <p className="font-garamond italic text-base text-brown/60">
               Thank you for your response. We look forward to celebrating with you!
@@ -129,7 +129,7 @@ export default function RSVPForm() {
         {/* Section heading */}
         <div className="text-center mb-8">
           <h2 className="font-sinhala font-bold text-2xl sm:text-3xl lg:text-4xl text-gold">
-            ගෞරවනීය ඇරයුම
+            f.!rjkSh werhqu{/* ගෞරවනීය ඇරයුම */}
           </h2>
           <p className="font-garamond text-base text-brown/60 mt-1">
             Kindly reply by July 15, 2026
@@ -141,12 +141,12 @@ export default function RSVPForm() {
           {/* Attending status */}
           <div>
             <label className="block font-sinhala text-sm sm:text-base text-brown font-semibold mb-2">
-              ඔබ සහභාගී වේද? <span className="text-accent-red">*</span>
+              Tn iyNd.S fõo@{/* ඔබ සහභාගී වේද? */} <span className="text-accent-red">*</span>
               <span className="font-garamond text-xs font-normal italic text-brown/50 ml-2">Will you attend?</span>
             </label>
             <div className="flex gap-2 sm:gap-3">
-              <AttendBtn value="yes" label="ඔව් — සතුටින්" sublabel="Yes, Happily"/>
-              <AttendBtn value="no" label="නැත — සමාවෙන්න" sublabel="No, With Regret"/>
+              <AttendBtn value="yes" label="Tõ — i;=áka" sublabel="Yes, Happily"/>{/* ඔව් — සතුටින් */}
+              <AttendBtn value="no" label="ke; — iudfj  k" sublabel="No, With Regret"/>{/* නැත — සමාවෙන්න */}
             </div>
           </div>
 
@@ -154,7 +154,7 @@ export default function RSVPForm() {
           {formData.attending === 'yes' && (
             <div>
               <label className="block font-sinhala text-sm sm:text-base text-brown font-semibold mb-2">
-                සහභාගී වන්නන් සංඛ්‍යාව
+                iyNd.S jkakfjkak ixLHdj{/* සහභාගී වන්නන් සංඛ්‍යාව */}
                 <span className="font-garamond text-xs font-normal italic text-brown/50 ml-2">Number of guests (incl. yourself)</span>
               </label>
               <div className="flex items-center gap-4">
@@ -182,7 +182,7 @@ export default function RSVPForm() {
           {/* Message */}
           <div>
             <label className="block font-sinhala text-sm sm:text-base text-brown font-semibold mb-1.5">
-              යුවළට පණිවිඩයක්
+              hqj&lt;g mKsúvhla{/* යුවළට පණිවිඩයක් */}
               <span className="font-garamond text-xs font-normal italic text-brown/50 ml-2">Message to the couple (optional)</span>
             </label>
             <textarea
@@ -198,7 +198,7 @@ export default function RSVPForm() {
           {status === 'error' && (
             <div className="rounded-lg bg-accent-red/10 border border-accent-red/30 p-3 text-center">
               <p className="font-sinhala text-sm text-accent-red">
-                කරුණාකර නැවත උත්සාහ කරන්න. දෝෂයක් ඇති විය.
+                lreKdlr kej; W;aidy   lrkak¡  fodaIhla  we;s  úh¡{/* කරුණාකර නැවත උත්සාහ කරන්න. දෝෂයක් ඇති විය. */}
               </p>
               <p className="font-garamond text-xs text-accent-red/70 italic mt-0.5">
                 An error occurred. Please try again.
@@ -214,9 +214,9 @@ export default function RSVPForm() {
                        disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >
             {status === 'submitting' ? (
-              <span className="font-sinhala">යවමින් පවතී...</span>
+              <span className="font-sinhala">hjñka mj;S¡¡¡{/* යවමින් පවතී... */}</span>
             ) : (
-              <span className="font-sinhala">ඇරයුම් පිළිගනිමු →</span>
+              <span className="font-sinhala">werhqï mjms&lt;s.ksuq     →{/* ඇරයුම් පිළිගනිමු → */}</span>
             )}
           </button>
 

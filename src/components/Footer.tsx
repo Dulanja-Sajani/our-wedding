@@ -30,9 +30,9 @@ export default function Footer() {
           <div className="flex-1 text-center px-2">
             {/* Names again */}
             <div className="flex items-center justify-center gap-2 sm:gap-4 mb-2">
-              <span className="font-sinhala text-sm sm:text-base font-semibold text-gold">දුලංජ</span>
+              <span className="font-sinhala text-sm sm:text-base font-semibold text-gold">ÿ,xc{/* දුලංජ */}</span>
               <span className="text-gold/40 text-xl">♥</span>
-              <span className="font-sinhala text-sm sm:text-base font-semibold text-gold">සජනි</span>
+              <span className="font-sinhala text-sm sm:text-base font-semibold text-gold">icks{/* සජනි */}</span>
             </div>
 
             {/* Date reminder */}
