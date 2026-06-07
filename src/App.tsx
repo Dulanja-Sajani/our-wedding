@@ -16,13 +16,25 @@ const cornerBase: React.CSSProperties = {
 
 export default function App() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [envelopeOpened, setEnvelopeOpened] = useState(
     () => sessionStorage.getItem('weddingEnvelopeOpened') === '1'
   );
+  const [muted, setMuted] = useState(false);
 
   function handleEnvelopeDone() {
     sessionStorage.setItem('weddingEnvelopeOpened', '1');
     setEnvelopeOpened(true);
+    if (audioRef.current) {
+      audioRef.current.currentTime = 11.5;
+      audioRef.current.play().catch(() => {});
+    }
+  }
+
+  function toggleMute() {
+    if (!audioRef.current) return;
+    audioRef.current.muted = !audioRef.current.muted;
+    setMuted(audioRef.current.muted);
   }
 
   useEffect(() => {
@@ -47,6 +59,51 @@ export default function App() {
   return (
     <>
       {!envelopeOpened && <EnvelopeIntro onDone={handleEnvelopeDone} />}
+
+      <audio ref={audioRef} src={`${import.meta.env.BASE_URL}ObaNisa.mp3`} loop />
+
+      {/* Floating mute button */}
+      {envelopeOpened && (
+        <button
+          onClick={toggleMute}
+          aria-label={muted ? 'Unmute music' : 'Mute music'}
+          style={{
+            position: 'fixed',
+            bottom: '24px',
+            right: '24px',
+            zIndex: 100,
+            width: '48px',
+            height: '48px',
+            borderRadius: '50%',
+            border: '1.5px solid rgba(201,150,12,0.5)',
+            background: 'linear-gradient(135deg, rgba(253,246,237,0.92) 0%, rgba(247,231,206,0.88) 100%)',
+            backdropFilter: 'blur(8px)',
+            boxShadow: '0 4px 20px rgba(201,150,12,0.25), inset 0 1px 0 rgba(255,255,255,0.7)',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {muted ? (
+            /* Muted — speaker with X */
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M11 5L6 9H3a1 1 0 00-1 1v4a1 1 0 001 1h3l5 4V5z"
+                fill="#C9960C" opacity="0.9"/>
+              <line x1="23" y1="9" x2="17" y2="15" stroke="#C9960C" strokeWidth="2" strokeLinecap="round"/>
+              <line x1="17" y1="9" x2="23" y2="15" stroke="#C9960C" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+          ) : (
+            /* Unmuted — speaker with sound waves */
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M11 5L6 9H3a1 1 0 00-1 1v4a1 1 0 001 1h3l5 4V5z"
+                fill="#C9960C" opacity="0.9"/>
+              <path d="M15.5 8.5a5 5 0 010 7" stroke="#C9960C" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+              <path d="M18.5 6a9 9 0 010 12" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.6"/>
+            </svg>
+          )}
+        </button>
+      )}
 
       {/* Fixed video background — pans from top to bottom as page scrolls */}
       <video
