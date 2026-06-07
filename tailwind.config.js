@@ -35,7 +35,7 @@ export default {
         },
       },
       fontFamily: {
-        sinhala: ['Noto Serif Sinhala', 'serif'],
+        sinhala: ['Tharu Digital Siyapatha', 'serif'],
         garamond: ['Cormorant Garamond', 'serif'],
         fell: ['"IM Fell English"', 'serif'],
       },

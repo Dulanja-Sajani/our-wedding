@@ -7,6 +7,11 @@
   src: url('/TharuDigitalNikini.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Tharu Digital Siyapatha';
+  src: url('/TharuDigitalSiyapatha.ttf') format('truetype');
+}
+
 @layer base {
   :root {
     /* Ivory & Cream Base */
@@ -37,7 +42,7 @@
 
   body {
     background: transparent;
-    font-family: 'Noto Serif Sinhala', serif;
+    font-family: 'Tharu Digital Siyapatha', serif;
     color: var(--text);
     overflow-x: hidden;
   }
