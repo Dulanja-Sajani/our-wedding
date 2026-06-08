@@ -93,6 +93,19 @@ export default function EnvelopeIntro({ onDone }: { onDone: () => void }) {
             }}
           />
 
+          {/* Layer 2 — opened envelope interior, visible behind the flap */}
+          <img
+            src={`${B}env-opened.png`}
+            alt=""
+            draggable={false}
+            style={{
+              position: 'absolute', inset: 0,
+              width: '100%', height: '100%',
+              objectFit: 'fill',
+              userSelect: 'none',
+            }}
+          />
+
           {/* Layer 3 — flap (RGBA transparent background).
               Width matches the canvas; height is auto so the image keeps its
               natural proportions — bottom edge lands at ~70% of canvas height. */}

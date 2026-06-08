@@ -51,6 +51,15 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+    vid.play().catch(() => {
+      const resume = () => { vid.play().catch(() => {}); document.removeEventListener('click', resume); };
+      document.addEventListener('click', resume, { once: true });
+    });
+  }, []);
+
+  useEffect(() => {
     const onScroll = () => {
       if (!videoRef.current) return;
       // Portrait viewports: video is already portrait-shaped, centre it
@@ -133,6 +142,7 @@ export default function App() {
           willChange: 'object-position',
           zIndex: -1,
           opacity: 0.15,
+          pointerEvents: 'none',
         }}
       >
         <source src={`${import.meta.env.BASE_URL}mandala-bg.mp4`} type="video/mp4" />
