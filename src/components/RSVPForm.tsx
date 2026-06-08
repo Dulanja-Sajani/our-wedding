@@ -113,9 +113,6 @@ export default function RSVPForm() {
             <p className="font-garamond italic text-base text-brown/60">
               Thank you for your response. We look forward to celebrating with you!
             </p>
-            <div className="mt-6">
-              <img src={dividerFlourishSrc} alt="" aria-hidden="true" className="w-full max-w-xs mx-auto"/>
-            </div>
           </div>
         </div>
       </section>
