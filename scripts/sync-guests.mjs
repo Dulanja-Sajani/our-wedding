@@ -41,7 +41,7 @@ const guests = rows
       phone:      col(cols, 'phone'),
       gender:     col(cols, 'gender').toLowerCase(),
       inviteType: col(cols, 'invitetype'),
-      count:      parseInt(col(cols, 'count'), 10),
+      count:      parseInt(col(cols, 'count'), 10) || 1,
     };
   })
   .filter(g => !isNaN(g.id) && g.name);
@@ -52,7 +52,7 @@ export interface Guest {
   name: string;
   phone: string;
   gender: 'male' | 'female';
-  inviteType: 'Individual' | 'Couple' | 'Family';
+  inviteType: 'Individual' | 'Individual - Married' | 'Couple' | 'Family';
   count: number;
 }
 
