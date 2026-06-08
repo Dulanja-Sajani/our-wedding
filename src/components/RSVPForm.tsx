@@ -72,14 +72,14 @@ export default function RSVPForm() {
       type="button"
       onClick={() => setFormData(d => ({ ...d, attending: value }))}
       className={`flex-1 py-3 px-2 rounded-lg border-2 transition-all duration-200
-                  font-sinhala text-sm sm:text-base font-semibold
+                  font-sinhala text-lg sm:text-xl font-semibold
                   ${formData.attending === value
                     ? 'border-gold bg-gold/10 text-gold shadow-gold'
                     : 'border-gold/30 bg-ivory/40 text-brown/70 hover:border-gold/60 hover:bg-gold/5'
                   }`}
     >
       <span className="block">{label}</span>
-      <span className="block text-xs font-garamond italic font-normal opacity-70 mt-0.5">{sublabel}</span>
+      <span className="block text-sm font-sinhala font-normal opacity-70 mt-0.5">{sublabel}</span>
     </button>
   );
 
@@ -129,10 +129,10 @@ export default function RSVPForm() {
         {/* Section heading */}
         <div className="text-center mb-8">
           <h2 className="font-sinhala font-bold text-2xl sm:text-3xl lg:text-4xl text-gold">
-            f.!rjkSh werhqu{/* ගෞරවනීය ඇරයුම */}
+            lreKdlr Tnf.a iyNd.S;ajh iaÓr lrkak
           </h2>
           <p className="font-garamond text-base text-brown/60 mt-1">
-            Kindly reply by July 15, 2026
+            Kindly RSVP before July 15, 2026
           </p>
         </div>
 
@@ -141,12 +141,11 @@ export default function RSVPForm() {
           {/* Attending status */}
           <div>
             <label className="block font-sinhala text-sm sm:text-base text-brown font-semibold mb-2">
-              Tn iyNd.S fõo@{/* ඔබ සහභාගී වේද? */} <span className="text-accent-red">*</span>
-              <span className="font-garamond text-xs font-normal italic text-brown/50 ml-2">Will you attend?</span>
+              Tn W;aijhg iyNd.S fjkjdo@<span className="text-accent-red"></span>{/* ඔබ සහභාගී වේද? */}
             </label>
             <div className="flex gap-2 sm:gap-3">
-              <AttendBtn value="yes" label="Tõ — i;=áka" sublabel="Yes, Happily"/>{/* ඔව් — සතුටින් */}
-              <AttendBtn value="no" label="ke; — iudfj  k" sublabel="No, With Regret"/>{/* නැත — සමාවෙන්න */}
+              <AttendBtn value="yes" label="Tõ" sublabel="b;d i;=áka iyNd.S fjñ'"/>{/* ඔව් — සතුටින් */}
+              <AttendBtn value="no" label="ke;" sublabel="iyNd.S ùug fkdyels ùu ms<sn|j lK.dgq fjñ'"/>{/* නැත — සමාවෙන්න */}
             </div>
           </div>
 
@@ -182,15 +181,15 @@ export default function RSVPForm() {
           {/* Message */}
           <div>
             <label className="block font-sinhala text-sm sm:text-base text-brown font-semibold mb-1.5">
-              hqj&lt;g mKsúvhla{/* යුවළට පණිවිඩයක් */}
-              <span className="font-garamond text-xs font-normal italic text-brown/50 ml-2">Message to the couple (optional)</span>
+              ukd, hqj&lt; fj; Tnf.a wdYs¾jdoh $ iqnme;=ï
+              <span className="font-garamond text-xs font-normal italic text-brown/50 ml-2">(optional)</span>
             </label>
             <textarea
               value={formData.message}
               onChange={e => setFormData(d => ({ ...d, message: e.target.value }))}
               rows={4}
               className="gold-input w-full px-4 py-3 rounded-lg text-base resize-none"
-              placeholder="Share your warm wishes..."
+              placeholder="kj hq. Èúhg md ;nk wm fj; Tnf.a wdorŒh iqnme;=ï fyda úfYaI igyka fuys we;=<;a lrkak'''"
             />
           </div>
 
