@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import dividerFlourishSrc from '../assets/svg/divider-flourish.svg';
+
 import { useInvitedGuest } from './Hero';
 
 type AttendingStatus = 'yes' | 'no' | 'maybe' | null;
