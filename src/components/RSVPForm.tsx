@@ -131,8 +131,8 @@ export default function RSVPForm() {
           <h2 className="font-sinhala font-bold text-2xl sm:text-3xl lg:text-4xl text-gold">
             lreKdlr Tnf.a iyNd.S;ajh iaÓr lrkak
           </h2>
-          <p className="font-garamond text-base text-brown/60 mt-1">
-            Kindly RSVP before July 15, 2026
+          <p className="font-sinhala text-sm sm:text-base text-brown/60 mt-2 leading-relaxed">
+            W;aijfha lghq;= jvd;a fyd¢ka ixúOdkh lr.ekSu i|yd cQ,s 15 Èkg fmr Tnf.a iyNd.S;ajh iaÓr lrk f,i ldre‚lj b,a,d isáuq'
           </p>
         </div>
 
