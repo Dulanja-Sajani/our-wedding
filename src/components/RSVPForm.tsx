@@ -123,7 +123,7 @@ export default function RSVPForm() {
   }
 
   return (
-    <section ref={sectionRef} className="section-animate py-12 sm:py-16 px-4 sm:px-8" id="rsvp">
+    <section ref={sectionRef} className="section-animate pt-4 pb-0 px-4 sm:px-8" id="rsvp">
       <div className="max-w-2xl mx-auto">
 
         {/* Section heading */}
@@ -153,24 +153,24 @@ export default function RSVPForm() {
           {formData.attending === 'yes' && (
             <div>
               <label className="block font-sinhala text-sm sm:text-base text-brown font-semibold mb-2">
-                iyNd.S jkakfjkak ixLHdj{/* සහභාගී වන්නන් සංඛ්‍යාව */}
-                <span className="font-garamond text-xs font-normal italic text-brown/50 ml-2">Number of guests (incl. yourself)</span>
+                meñfKk ixLHdj{/* සහභාගී වන්නන් සංඛ්‍යාව */}
+                <span className="font-garamond text-xs font-normal italic text-brown/50 ml-2">(incl. yourself)</span>
               </label>
               <div className="flex items-center gap-4">
                 <button
                   type="button"
                   onClick={() => setFormData(d => ({ ...d, guestCount: Math.max(1, d.guestCount - 1) }))}
-                  className="w-10 h-10 rounded-full border-2 border-gold/60 text-gold font-bold text-xl
+                  className="w-10 h-10 rounded-full border-2 border-gold/60 text-gold font-bold text-xl font-sans
                              hover:bg-gold/10 transition-colors flex items-center justify-center"
                   aria-label="Decrease"
                 >−</button>
-                <span className="font-sinhala text-xl font-bold text-gold w-16 text-center">
+                <span className="font-sinhala text-3xl font-bold text-gold w-16 text-center">
                   {formData.guestCount}
                 </span>
                 <button
                   type="button"
                   onClick={() => setFormData(d => ({ ...d, guestCount: Math.min(guest?.count ?? 10, d.guestCount + 1) }))}
-                  className="w-10 h-10 rounded-full border-2 border-gold/60 text-gold font-bold text-xl
+                  className="w-10 h-10 rounded-full border-2 border-gold/60 text-gold font-bold text-xl font-sans
                              hover:bg-gold/10 transition-colors flex items-center justify-center"
                   aria-label="Increase"
                 >+</button>
@@ -188,7 +188,7 @@ export default function RSVPForm() {
               value={formData.message}
               onChange={e => setFormData(d => ({ ...d, message: e.target.value }))}
               rows={4}
-              className="gold-input w-full px-4 py-3 rounded-lg text-base resize-none"
+              className={`gold-input w-full px-4 py-3 rounded-lg text-base resize-none ${formData.message ? 'font-sans' : 'font-sinhala'}`}
               placeholder="kj hq. Èúhg md ;nk wm fj; Tnf.a wdorŒh iqnme;=ï fyda úfYaI igyka fuys we;=<;a lrkak'''"
             />
           </div>
@@ -210,12 +210,12 @@ export default function RSVPForm() {
             type="submit"
             disabled={status === 'submitting' || !formData.attending}
             className="gold-btn w-full py-4 rounded-xl text-base sm:text-lg
-                       disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                       disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none font-sinhala text-xl sm:text-2xl"
           >
             {status === 'submitting' ? (
               <span className="font-sinhala">hjñka mj;S¡¡¡{/* යවමින් පවතී... */}</span>
             ) : (
-              <span className="font-sinhala">werhqï mjms&lt;s.ksuq     →{/* ඇරයුම් පිළිගනිමු → */}</span>
+              <span className="font-sinhala">iaÓr lrkak</span>
             )}
           </button>
 

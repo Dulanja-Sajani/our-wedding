@@ -74,7 +74,7 @@ export default function EventDetails() {
   );
 
   return (
-    <section ref={sectionRef} className="section-animate py-12 sm:py-16 px-4 sm:px-8">
+    <section ref={sectionRef} className="section-animate pt-4 pb-12 sm:pb-16 px-4 sm:px-8">
       <div className="max-w-3xl mx-auto">
         <div className="marble-card rounded-2xl p-6 sm:p-10 relative overflow-hidden">
 

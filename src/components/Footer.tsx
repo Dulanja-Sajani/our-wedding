@@ -4,15 +4,10 @@ import footerScroll from '../assets/svg/footer-scroll.svg';
 
 export default function Footer() {
   return (
-    <footer className="relative mt-8">
-
-      {/* Footer scroll top border */}
-      <div className="w-full overflow-hidden">
-        <img src={footerScroll} alt="" aria-hidden="true" className="w-full h-auto min-h-[40px]"/>
-      </div>
+    <footer className="relative mt-0">
 
       {/* Footer body */}
-      <div className="bg-gradient-to-b from-ivory via-champagne-light to-beige-light pt-6 pb-8 px-4">
+      <div className="bg-transparent pt-6 pb-8 px-4">
 
         {/* Thin red accent line */}
         <div className="w-full max-w-lg mx-auto mb-5">
@@ -22,9 +17,6 @@ export default function Footer() {
         {/* Peacocks + center content */}
         <div className="flex items-end justify-between max-w-3xl mx-auto gap-4">
 
-          {/* Left peacock */}
-          <img src={peacockLeft} alt="" aria-hidden="true"
-            className="w-20 sm:w-28 lg:w-36 flex-shrink-0 opacity-90 self-end"/>
 
           {/* Center text */}
           <div className="flex-1 text-center px-2">
@@ -51,11 +43,6 @@ export default function Footer() {
               © 2026 Dulanja &amp; Sajani
             </p>
           </div>
-
-          {/* Right peacock */}
-          <img src={peacockRight} alt="" aria-hidden="true"
-            className="w-20 sm:w-28 lg:w-36 flex-shrink-0 opacity-90 self-end"/>
-
         </div>
 
       </div>
