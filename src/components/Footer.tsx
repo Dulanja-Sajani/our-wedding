@@ -1,6 +1,3 @@
-import peacockLeft from '../assets/svg/peacock-left.svg';
-import peacockRight from '../assets/svg/peacock-right.svg';
-import footerScroll from '../assets/svg/footer-scroll.svg';
 
 export default function Footer() {
   return (
