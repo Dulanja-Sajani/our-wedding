@@ -208,11 +208,15 @@ export default function Hero() {
               <p className="font-sinhala font-bold text-2xl sm:text-3xl mb-4"
                   style={{color:'#C9960C', textShadow:'0 1px 8px rgba(201,150,12,0.2)'}}>
                 {guest.name}{' '}
+                <span className="font-sans">
                 {guest.inviteType === 'Individual'
-                  ? (guest.gender === 'male' ? 'uy;dg' /* මහතාට */ : 'uy;añhg' /* මහත්මියට */)
+                  ? (guest.gender === 'male' ? 'මහතාට' : 'මෙනවිය')
+                  : guest.inviteType === 'Individual - Married'
+                  ? (guest.gender === 'male' ? 'මහතාට' : 'මහත්යට')
                   : guest.inviteType === 'Couple'
-                  ? 'uy;d iy uy;añhg' /* මහතා සහ මහත්මියට */
-                  : (guest.gender === 'male' ? 'uy;d' /* මහතා */ : 'uy;añh' /* මහත්මිය */)}
+                  ? 'මහතා සහ මහත්මියට'
+                  : (guest.gender === 'male' ? 'මහතා' : 'මහත්මිය')}
+                </span>
 
               </p>
             ) : (

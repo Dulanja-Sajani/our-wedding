@@ -3,7 +3,7 @@ export interface Guest {
   name: string;
   phone: string;
   gender: 'male' | 'female';
-  inviteType: 'Individual' | 'Couple' | 'Family';
+  inviteType: 'Individual' | 'Individual - Married' | 'Couple' | 'Family';
   count: number;
 }
 
