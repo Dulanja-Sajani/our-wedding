@@ -214,7 +214,7 @@ export default function Hero() {
                   : guest.inviteType === 'Individual - Married'
                   ? (guest.gender === 'male' ? 'මහතාට' : 'මහත්යට')
                   : guest.inviteType === 'Couple'
-                  ? 'මහතා සහ මහත්මියට'
+                  ? 'මහතා  සහ මහත්මියට'
                   : (guest.gender === 'male' ? 'මහතා' : 'මහත්මිය')}
                 </span>
 
