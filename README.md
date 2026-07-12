@@ -121,7 +121,7 @@ Copy each URL and paste into WhatsApp. You can also select the cell and use **Ct
 
 ### Never renumber IDs
 
-Once a URL has been shared, the `id` must never change. If you remove a guest, leave a gap — don't shift IDs down. Old links keep working as long as the `id` exists.
+Once a URL has been shared, the `id` must never change. If you remove a guest, leave a gap — don't shift IDs down. Old links keep working as long as the `id` exists..
 
 ---
 
