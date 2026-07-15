@@ -210,11 +210,11 @@ export default function Hero() {
                 {guest.name}{' '}
                 <span className="font-sans">
                 {guest.inviteType === 'Individual'
-                  ? (guest.gender === 'male' ? 'මහතාට' : 'මෙනවියට')
+                  ? (guest.gender === 'male' ? 'මහතා ට' : 'මෙනවියට')
                   : guest.inviteType === 'Individual - Married'
-                  ? (guest.gender === 'male' ? 'මහතාට' : 'මහත්මියට')
+                  ? (guest.gender === 'male' ? 'මහතා ට' : 'මහත්මියට')
                   : guest.inviteType === 'Couple'
-                  ? 'මහතා  සහ මහත්මියට'
+                  ? 'මහතා   සහ මහත්මියට'
                   : (guest.gender === 'male' ? 'මහතා' : 'මහත්මිය')}
                 </span>
 
